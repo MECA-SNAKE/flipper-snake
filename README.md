@@ -15,7 +15,9 @@ Pour commencer voici une présentation de notre magnigique serpent: Flipper
   **Electronics**
 
   **Cable Management**
+  
 ##Code
+
   **Application**
 
   **Client-Server communication**
