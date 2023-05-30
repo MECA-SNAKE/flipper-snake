@@ -1,7 +1,7 @@
 # flipper-snake
 Pour commencer voici une présentation de notre magnigique serpent: Flipper
 ## Motivation 
-
+ njkdsnv
 ## Conception
 
   **Material**
@@ -16,7 +16,7 @@ Pour commencer voici une présentation de notre magnigique serpent: Flipper
 
   **Cable Management**
   
-##Code
+ ##Code
 
   **Application**
 
