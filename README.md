@@ -1,4 +1,4 @@
-# flipper-snake
+# RoboViper
 Pour commencer voici une présentation de notre magnigique serpent: Flipper
 ## Motivation 
   These flexible and slithering machines excel at navigating complex and confined spaces, offering immense potential in various fields, including search and rescue operations, industrial inspections, exploration, medical applications, surveillance and security, and hazardous environments.
