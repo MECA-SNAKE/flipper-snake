@@ -8,28 +8,28 @@ In search and rescue scenarios, robotic snakes play a crucial role. Unlike tradi
 In the realm of medicine, robotic snakes hold promise as potential assistants in minimally invasive surgeries. Their flexible bodies and precise control enable access to hard-to-reach areas within the human body with minimal invasiveness. Surgeons can remotely control these robots, reducing the risk of complications and enhancing surgical outcomes in various medical specialties.
 
 ## Conception
-  **Material**
+  - **Material**
 
-  **Piece design**
+  - **Piece design**
 
-  1. Key points
+    1. Key points
 
-  2. Why wheels ?
+    2. Why wheels ?
 
-  **Electronics**
+  - **Electronics**
 
-  **Cable Management**
+  - **Cable Management**
  ## Code
-  **Application**
+  - **Application**
 
-  **Client-Server communication**
+  - **Client-Server communication**
 
-  **Controls**
+  - **Controls**
 
-  **Movements**
-  1. Inchworm
-  2. Concertina
-  3. Undulated
+  - **Movements**
+    1. Inchworm
+    2. Concertina
+    3. Undulated
  
 ## Limitation
 
