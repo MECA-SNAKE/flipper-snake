@@ -14,7 +14,7 @@ Pour commencer voici une présentation de notre magnigique serpent: Flipper
   **Electronics**
 
   **Cable Management**
- ##Code
+ ## Code
   **Application**
 
   **Client-Server communication**
@@ -25,7 +25,7 @@ Pour commencer voici une présentation de notre magnigique serpent: Flipper
   1. Inchworm
   2. Concertina
   3. Undulated
-##Limitation
+## Limitation
 
-##Improvements
+## Improvements
 
