@@ -5,20 +5,20 @@ Pour commencer voici une présentation de notre magnigique serpent: Flipper
 ## Conception
 ###Material 
 ###Piece design
-####Key points
-####Why wheels ?
+**Key points**
+**Why wheels ?**
 ###Electronics
 
 ###Cable Management
 
 ##Code
 ###Application
-####Client-Server communication
-####Controls
+**Client-Server communication**
+**Controls**
 ###Movements
-####Inchworm
-####Undulation
-####Concertina
+**Inchworm**
+**Undulation**
+**Concertina**
 ##Limitation
 ##Improvements
 
