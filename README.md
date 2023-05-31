@@ -119,6 +119,10 @@ The main challenge of that has been the soldering of the + and - cables for all 
   
 ## Software Design
 
+The software is divided into 3 big parts: the code for **the motions**, the code for **the UI** and the **client-server communication**. In this section, we explain how we implemented them and why like that. The code for the UI is not really important to explain since it's only for the design of the app and it's React notions, but we will explain how the joystick works to fully control the snake.
+
+### React Native App
+
 ![Alt Text](docs/main_app.gif)
 
 The snake control application is a mobile app developed using React Native, a popular framework for building cross-platform applications. Written in TypeScript, a statically-typed superset of JavaScript, the code ensures code reliability through type checking. The snake control app allows users to control the snake's movements wirelessly. The application utilizes various components and libraries to create 2 main views: a home view where we can select the mode of motion and other parameters, and a user-friendly interface to control the snake after activating a motion.
@@ -196,11 +200,14 @@ const App: React.FC<Props> = () => {
 
 Client-side, the application utilizes a library called axios. Axios facilitates HTTP requests and enables the application to send commands and receive data from the snake. For instance, the ```sendRequests``` function is responsible for sending control commands such as starting or stopping the snake's motion, adjusting parameters like wavelength and amplitude, and selecting different motion modes like concertina or undulated.
 
-### Controls
+### Movement and Controls
 
-### Movements
+Let's finally talk about the motions of the snake. We will explain mathematically the functions implemented for them and also talk how they interact with the phone app, especially with the joystick. Let's begin with the Inchworm
   
     1. Inchworm
+    
+    sfserdf
+    
     2. Concertina
     3. Undulated
     
