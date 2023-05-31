@@ -24,6 +24,8 @@ Next challenge was the transmission of the movement from one piece to another. T
     
 ![Alt Text](docs/animation_star v1.gif)
  In order to have the piece fit well and not dislock, we also made an extrusion beneath the surface and a hole in the corresponding part of the second piece. This allow to have a good interlocking system. To limit friction between the pieces we added a bearing in which the extrusion comes to fit.
+ ![Alt Text](docs/bearring_animation.gif)
+
 ![Alt Text](docs/design_wheels.png)
 
     1. Key points
