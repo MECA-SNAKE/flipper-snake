@@ -19,10 +19,12 @@ Here is a updated file ? does third heading show ?
     
 ![Alt Text](docs/save_prototype_v4_animation_v3 v2.gif)
 
+![Alt Text](docs/design_wheels.png)
+
     1. Key points
 
     2. Why wheels ?
-
+    
 ### Electronics
 
 ### Cable Management
