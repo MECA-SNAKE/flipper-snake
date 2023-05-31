@@ -14,7 +14,7 @@ In the realm of medicine, robotic snakes hold promise as potential assistants in
 ### Piece design
 
 ![Alt Text](docs/animation_complete v7.gif)
-
+check
 
 The concept of the design is relatively simple, but there is some challenges. We had to design a joint, that allowed a good range of motion, at least from 0 to 180 degrees. Moreover, the servo needed a strong hold with minimum looseness. In order to do so we design an interlocking piece that locks together along one axis. Which allowed a maximum range of motion from -30 to 230 degree approxiamatly. For the servo we just design a simple hold, in which we designed four hole in order to screw the servos in. In those hole we had to put insert in order to have the thread pitch. This allowed the servo to have a firm grip and be really stable. 
 
