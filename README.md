@@ -69,6 +69,7 @@ These modifications proved effective in achieving a well-fitting and stable asse
 Last but crucial point for the snake success is the addition of wheels. Indeed without this the snake would not go forward. It is due to the fact that the lateral friction created by the wheels forces the movement in one direction, and therefore allows it to move forward. It mimics what a real snake's scales does, increase friction in some direction. We really wanted to hide them as much as possible, to avoid people thinking they are driving the snake, instead of the undulated motion. The effort made to reduce their visibility result in a clean and elegant design.
 
 #### 4. Designing the Head
+![Alt Text](docs/head.png)
 
 #### 5. Thinking ahead
 ![Alt Text](docs/design_wheels.png)
