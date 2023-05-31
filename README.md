@@ -70,8 +70,8 @@ Last but crucial point for the snake success is the addition of wheels. Indeed w
 
 #### 4. Designing the Head
 
-![Alt Text](docs/design_wheels.png)
 #### 5. Thinking ahead
+![Alt Text](docs/design_wheels.png)
 
 The design is a cornerstone of the project. The smallest mistake could result in the failure of the entire project. We tried as much as possible to think about all possible problem that we could run into. One of them was cable management. In order to finish with a clean project we designed some hole in the piece that would let the cable run from tail to head. Unfortunately, we could not use them as the hole intended to accomplish this task were designed to small to fit the servo's end of the cable. 
     
@@ -99,8 +99,13 @@ Here, since we don't use the PCA9685 to power the servos, but only control them,
 A big challenge for us in this project was to minimize the number and the size of electronic components, especially because the snake doesn't have much surface area available for inserting components. After some time of thinking, we end up with the idea of putting everything inside and above the head of the snake. It's a good choice since all the electonics are in one place and so it's centralized. And even if someone can say that they will be too much cables near the head, we thought it would be better than having some cables going to the tail, other to the head. 
 
 ### Cable Management
+The cable management has been a step connected with the electronic design of the project. We managed to group them with many zipties all along the snake until they reached the head. At this point, we designed the head with little holes to pass the cables through it to reach the board and the microcontroller. 
 
-It requires more time for the cable management since we needed to solder the + and - for all servos and pass
+--> image of the holes of the head
+
+The main challenge of that has been the soldering of the + and - cables for all servos to the ones of the battery after the converter. Even though it was very repetitive and not all that difficult, you had to be very careful not to get lost. If you miss a single weld, you're back to square one. 
+
+--> images of the soldering of the +/-
   
 ## Code
  
