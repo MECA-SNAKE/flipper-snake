@@ -127,7 +127,7 @@ The "game" mode of the application is designed in a way that facilitates the use
 
 Finally, with some solid background of computer science studies, we thought that React Native was a very straight-forward and intuitive framework to use for our snake project. By combining efficient state management, network communication, and intuitive user interface design, the application offers a seamless and engaging experience for controlling the snake wirelessly.
 
-![Alt Text](docs/exampleapp.gif)
+![Alt Text](docs/final_example.gif)
 
 ### Client-Server communication
 
