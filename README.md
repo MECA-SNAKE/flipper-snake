@@ -22,6 +22,7 @@ The concept of the design is relatively simple, but there is some challenges. We
 
 Next challenge was how to transmit the movement from one piece to another. We just use one of the mounting head of the servo and duplicated its shape on our piece, so that when we assemble two piece together we can had the servo head from the top, which completes the assembly. We used a star shaped head, the idea was that with its many point of contact with the next piece, it would help a lot driving the movement. This showed to be really successful, however the implementation of the design took multiple tries due to the complexity of the shape. Once the dimension were figured out, we printed the final piece.
     
+![Alt Text](docs/animation_star v1.png)
 
 ![Alt Text](docs/design_wheels.png)
 
