@@ -117,11 +117,22 @@ The main challenge of that has been the soldering of the + and - cables for all 
 
 --> images of the soldering of the +/-
   
-## Code
- 
-### Application
+## Software Design
+
+The snake control application is a mobile app developed using React Native, a popular framework for building cross-platform applications. Written in TypeScript, a statically-typed superset of JavaScript, the code ensures code reliability through type checking. The snake control app allows users to control the snake's movements wirelessly. The application utilizes various components and libraries to create 2 main views: a home view where we can select the mode of motion and other parameters, and a user-friendly interface to control the snake after activating a motion.
+
+The "game" mode of the application is designed in a way that facilitates the user experience of controlling the snake. We used a joystickbn to allow the user to control the snake. The app has taken various different faces throughout our project, initially, our goal was to be able to allow the user to enter any possible combination of parameters for the wavelength, amplitude, speed and frequency, but the more we tested out our snake's motion, we realized that random parameter inputs were not to the snake's advantage. We decided to abandon this idea to prevent the snake from making sudden movements and damaging itself. We have pre configured parameter inputs to plug into the snake at any moment the user wants it to turn right, left, go forwards or backwards. It's important to note that the application doesn't allow the user to go left or right if the inchworm motion is enabled and doesn't allow the user to go anywhere but forwards if the concertina motion is enabled. This is because we have to flip the snake over when the inchworm motion is enabled, imposing only 1 degree of freedom on the vertical axis.
+
+Finally, with some solid background of computer science studies, we thought that React Native was a very straight-forward and intuitive framework to use for our snake project. By combining efficient state management, network communication, and intuitive user interface design, the application offers a seamless and engaging experience for controlling the snake wirelessly.
 
 ### Client-Server communication
+
+A big software implementation has been the communication between the ESP8266 and the react native app. The first idea was to communicate by Bluetooth Low Energy (BLE) since it’s very simple to deploy. We realized several days after that the ESP8266 does not have a bluetooth module but a WIFI module.
+
+We use it to deploy a web server on the ESP8266 to handle POST requests from the phone app to control the snake. Client-side, the application uses a framework called axios to make HTTP requests to the server.
+
+
+The ESP8266 allows us to send commands to it via WiFi, which we exploited in this app. To communicate with the snake device wirelessly, the application utilizes a library called axios. Axios facilitates HTTP requests and enables the application to send commands and receive data from the snake. For instance, the ‘sendRequests’ function is responsible for sending control commands such as starting or stopping the snake's motion, adjusting parameters like wavelength and amplitude, and selecting different motion modes like concertina or undulated.
 
 ### Controls
 
@@ -130,8 +141,24 @@ The main challenge of that has been the soldering of the + and - cables for all 
     1. Inchworm
     2. Concertina
     3. Undulated
- 
+    
 ## Limitation
 
 ## Improvements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
