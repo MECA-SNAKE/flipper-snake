@@ -3,6 +3,10 @@ Flipper is a fully 3D-printed snake robot controlled by a react native app. It i
 
 -- insert videos --
 
+## How to reproduce the snake
+
+--> marche à suivre
+
 ## Motivation 
 Serpentine robots are a groundbreaking innovation in robotics, captivating researchers and engineers with their unique physical characteristics and versatile capabilities. These flexible and slithering machines excel at navigating complex and confined spaces, offering immense potential in various fields, including search and rescue operations, industrial inspections, exploration, medical applications, surveillance and security, and hazardous environments.
 
@@ -220,7 +224,7 @@ int rotate_with_min_max(int servo, double angle) {
 
 driver.setPWM(5, 0, rotate_with_min_max(5, 80));
 ```
-Here we can see that we set the minimum and maximum pulses widths to 800 and 2000 microseconds respectively. This range specifies the range of pulses that we can send to rotate the servos from 0 to 180 degrees. A pulse of 800 microseconds means that the servo will move to the position 0 for example. Each pulse width is an angle to resume. Also we set the frequency to 50Hz allowing us to move each servo 50 times per second. Now the ```setPWM``` function here rotates the servo 5 to the position 80 degrees. The last we need is to convert the angle value into this pulse range, and it's done with this ```map``` function from Arduino that map a range of values to another range of values. Also a last step is to convert the value into a 12 bits resolution because it's how the PCA9685 is build.
+Here we can see that we set the minimum and maximum pulses widths to 800 and 2000 microseconds respectively. This range specifies the range of pulses that we can send to rotate the servos from 0 to 180 degrees. A pulse of 800 microseconds means that the servo will move to the position 0 for example. Each pulse width is an angle to resume. Also we set the frequency to 50Hz allowing us to move each servo 50 times per second. Now the ```setPWM``` function here rotates the servo 5 to the position 80 degrees. The last we need is to convert the angle value into this pulse range, and it's done with this ```map``` function from Arduino that map a range of values to another range of values. Also a last step is to convert the value into a 12 bits resolution because it's how the PCA9685 is build. With this said, let's talk about the motions
   
 #### 1. Inchworm
 --> robin mon reuf
