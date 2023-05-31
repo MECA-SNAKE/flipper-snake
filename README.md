@@ -17,7 +17,7 @@ In the realm of medicine, robotic snakes hold promise as potential assistants in
 
       <iframe width="560" height="315" src="https://www.youtube.com/embed/HALg-aoo9x8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
+![Alt Text](docs/save_prototype_v4_animation_v3 v2.gif)
 
     1. Key points
 
