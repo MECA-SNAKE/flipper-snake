@@ -71,6 +71,10 @@ Last but crucial point for the snake success is the addition of wheels. Indeed w
 #### 4. Designing the Head
 ![Alt Text](docs/head.png)
 
+The design of the head has been choosen accordly to our ideas for the cables and electronic management. We needed a head that can hold the microcontroller, the servos board, the converter and all the cables for the circuit. Even if, when all it's in place, it's a little bit messy inside head after placing the components, it's a good approach since they are protected by the plastic. 
+
+--> image de la tete avec l'electronic
+
 #### 5. Thinking ahead
 ![Alt Text](docs/design_wheels.png)
 
