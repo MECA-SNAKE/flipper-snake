@@ -202,7 +202,7 @@ Client-side, the application utilizes a library called axios. Axios facilitates 
 
 ### Movements and Controls
 
-Let's finally talk about the motions of the snake. We will explain mathematically the functions implemented for them and also talk how they interact with the phone app, especially with the joystick. Let's begin with the Inchworm
+Let's finally talk about the motions of the snake. We will explain mathematically the functions implemented for them and also talk how they interact with the phone app, especially with the joystick. But first let's begin to talk about how we move the servos from the microcontroller. The servos, as we said before, are controlled by a special board using pulse-wide modulation signals, which is a method of controlling the average power delivered by an electrical signal. Without entering into the details, we can easily send "pulses" of a certain length to the servos to move them from an angle A to an angle B
   
 #### 1. Inchworm
 --> robin mon reuf
@@ -215,6 +215,13 @@ Let's finally talk about the motions of the snake. We will explain mathematicall
 As we see in the video, the snake contracts itself with a certain wavelength, lengthen half of its body, contracts the front half again while lengthening the tail. It has been surprisely the hardest motion because of this "step by step" motion on the ground. It's simple for it to rotate while moving and this was not expected. However, after a great deal of research, we realised that even in other projects, this movement was one of the hardest, at least more so than the undulated movement!
 
 #### 3. Undulated
+
+Lateral undulation is the main type of locomotion for snakes. It is the usual undulated movement that we intuitively think about when picturing a moving snake. To implement that, we had to look at the math behind this movement.
+
+It turns out with surprise that the equation for a simple undulation was not really difficult because it’s only a sine wave (logic you should say). We have to be attentive to this motion because what we described lies on a continuous world, but our snake is composed of multiple servo motors with pieces of **fixed length**, which is something discrete, it's the opposite of a real snake that can extend his body. This was the part we were the most afraid of. We could have designed parts as perfect as possible, the fact that this sine equation is in a continuous world, we couldn't know if implementing it on our snake would work. It turns out that yes it worked!
+
+
+
     
 ## Limitation
 
