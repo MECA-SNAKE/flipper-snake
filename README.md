@@ -119,7 +119,7 @@ The main challenge of that has been the soldering of the + and - cables for all 
   
 ## Software Design
 
-![Alt Text](docs/main_app.gif#center)
+![Alt Text](docs/main_app.gif)
 
 The snake control application is a mobile app developed using React Native, a popular framework for building cross-platform applications. Written in TypeScript, a statically-typed superset of JavaScript, the code ensures code reliability through type checking. The snake control app allows users to control the snake's movements wirelessly. The application utilizes various components and libraries to create 2 main views: a home view where we can select the mode of motion and other parameters, and a user-friendly interface to control the snake after activating a motion.
 
@@ -136,6 +136,7 @@ A big software implementation has been the communication between the ESP8266 and
 We use it to deploy a web server on the ESP8266 to handle POST requests from the phone app to control the snake. Here for example is one of the route that we can use to reset the snake when a user clicks on the reset button.
 
 ``` cpp
+// Server-side code
 server.on("/reset", HTTP_POST, [](AsyncWebServerRequest *request) {
     if(request->hasParam("value", true)) {
       AsyncWebParameter* p = request->getParam("value", true);
@@ -150,6 +151,47 @@ server.on("/reset", HTTP_POST, [](AsyncWebServerRequest *request) {
     }
   });
 
+```
+
+```ts
+// Client-side code
+const App: React.FC<Props> = () => {
+    // ... 
+        
+    const handleButtonReset = () => {
+        sendRequests("value", "0", "reset");
+    }
+    
+    // ... 
+
+    function sendRequests(key: string, val: string, root: string) {
+        axios.post('http://192.168.236.121/' + root, {
+          [key]: val
+        }, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        }).then((response) => {
+          console.log(response);
+        }, (error) => {
+          console.log(error);
+        });
+
+        }
+   }  
+   
+   // ... 
+   
+   return (
+        // ...  
+    
+        <TouchableOpacity onPress={handleButtonReset}>
+          <Text>Reset</Text>
+        </TouchableOpacity>   
+        
+         // ...        
+   )
+}
 ```
 
 Client-side, the application utilizes a library called axios. Axios facilitates HTTP requests and enables the application to send commands and receive data from the snake. For instance, the ```sendRequests``` function is responsible for sending control commands such as starting or stopping the snake's motion, adjusting parameters like wavelength and amplitude, and selecting different motion modes like concertina or undulated.
