@@ -1,13 +1,22 @@
-# Robotic Snake
-Pour commencer voici une présentation de notre magnigique serpent: Flipper
+# Flipper - Snake Robot
+First of all, here is a presentation of our snake robot: Flipper
+
 ## Motivation 
-  These flexible and slithering machines excel at navigating complex and confined spaces, offering immense potential in various fields, including search and rescue operations, industrial inspections, exploration, medical applications, surveillance and security, and hazardous environments.
+Serpentine robots are a groundbreaking innovation in robotics, captivating researchers and engineers with their unique physical characteristics and versatile capabilities. These flexible and slithering machines excel at navigating complex and confined spaces, offering immense potential in various fields, including search and rescue operations, industrial inspections, exploration, medical applications, surveillance and security, and hazardous environments.
 
 In search and rescue scenarios, robotic snakes play a crucial role. Unlike traditional robots, they excel at maneuvering through narrow and cluttered environments, such as collapsed buildings or debris. With their flexible bodies, they can easily navigate tight spaces, climb obstacles, and explore inaccessible areas. Equipped with cameras and sensors, these robots transmit real-time data, aiding rescuers in locating survivors and assessing surrounding conditions.
 
-In the realm of medicine, robotic snakes hold promise as potential assistants in minimally invasive surgeries. Their flexible bodies and precise control enable access to hard-to-reach areas within the human body with minimal invasiveness. Surgeons can remotely control these robots, reducing the risk of complications and enhancing surgical outcomes in various medical specialties.
+Our objective was to undertake a project that would have practical relevance in the real world. The field of robotics is continuously evolving, and we saw the development of a robotic snake as a chance to deepen our understanding of robotics and gain practical experience in designing and building complex systems. As a group of five computer scientists with backgrounds in communication systems and computer science, we possess a solid understanding of algorithms, programming languages, and system design, which are essential components in the development of a robotic system.
 
-##Preparation for the project
+While we may not have had direct experience in building robotic systems, we embraced the opportunity to expand our expertise. We were committed to researching the specific technologies and methodologies required to develop a robotic snake, including mechanical engineering principles and electrical systems.
+
+## Preparation for the project
+To prepare ourselves for our first project in robotic, we looked on similar projects on the web to see how we could start it. It didn't take long to find some examples of snake robots and the 2 we've choosen are
+
+* https://www.instructables.com/Bioinspired-Robotic-Snake/
+* https://www.instructables.com/Snake-Robot-1/
+
+Additionnally, we had the chance to talk about snake robot with a PhD Student of the Bio-Robotic Lab at EPFL. She gives us ideas and recommendations for a good project in less than a semester, such as keep only one degree of freedom for the motion and to look at sinusoidal function to understand how works the undulated motion of a snake.
 
 ## Conception
 
