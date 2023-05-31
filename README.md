@@ -119,7 +119,7 @@ The main challenge of that has been the soldering of the + and - cables for all 
   
 ## Software Design
 
-![Alt Text](docs/main_app.gif)
+![Alt Text](docs/main_app.gif#center)
 
 The snake control application is a mobile app developed using React Native, a popular framework for building cross-platform applications. Written in TypeScript, a statically-typed superset of JavaScript, the code ensures code reliability through type checking. The snake control app allows users to control the snake's movements wirelessly. The application utilizes various components and libraries to create 2 main views: a home view where we can select the mode of motion and other parameters, and a user-friendly interface to control the snake after activating a motion.
 
