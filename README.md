@@ -133,10 +133,26 @@ Finally, with some solid background of computer science studies, we thought that
 
 A big software implementation has been the communication between the ESP8266 and the react native app. The first idea was to communicate by Bluetooth Low Energy (BLE) since it’s very simple to deploy. We realized several days after that the ESP8266 does not have a bluetooth module but a WIFI module.
 
-We use it to deploy a web server on the ESP8266 to handle POST requests from the phone app to control the snake. Client-side, the application uses a framework called axios to make HTTP requests to the server.
+We use it to deploy a web server on the ESP8266 to handle POST requests from the phone app to control the snake. Here for example is one of the route that we can use to reset the snake when a user clicks on the reset button.
 
+``` cpp
+server.on("/reset", HTTP_POST, [](AsyncWebServerRequest *request) {
+    if(request->hasParam("value", true)) {
+      AsyncWebParameter* p = request->getParam("value", true);
+      int value = p->value().toInt();
 
-The ESP8266 allows us to send commands to it via WiFi, which we exploited in this app. To communicate with the snake device wirelessly, the application utilizes a library called axios. Axios facilitates HTTP requests and enables the application to send commands and receive data from the snake. For instance, the ‘sendRequests’ function is responsible for sending control commands such as starting or stopping the snake's motion, adjusting parameters like wavelength and amplitude, and selecting different motion modes like concertina or undulated.
+      if(value == 0) {
+        motion_snake = NONE;
+      }
+      request->send(200, "text/html", "good"); 
+    } else {
+      request->send(404, "text/html", "Error reset"); 
+    }
+  });
+
+```
+
+Client-side, the application utilizes a library called axios. Axios facilitates HTTP requests and enables the application to send commands and receive data from the snake. For instance, the ```sendRequests``` function is responsible for sending control commands such as starting or stopping the snake's motion, adjusting parameters like wavelength and amplitude, and selecting different motion modes like concertina or undulated.
 
 ### Controls
 
