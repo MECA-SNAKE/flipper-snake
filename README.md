@@ -8,9 +8,9 @@ In search and rescue scenarios, robotic snakes play a crucial role. Unlike tradi
 In the realm of medicine, robotic snakes hold promise as potential assistants in minimally invasive surgeries. Their flexible bodies and precise control enable access to hard-to-reach areas within the human body with minimal invasiveness. Surgeons can remotely control these robots, reducing the risk of complications and enhancing surgical outcomes in various medical specialties.
 
 ## Conception
-  - **Material**
+  ### Material
 
-  - **Piece design**
+  ### Piece design
 
 
 
