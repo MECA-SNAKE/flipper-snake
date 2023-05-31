@@ -202,7 +202,25 @@ Client-side, the application utilizes a library called axios. Axios facilitates 
 
 ### Movements and Controls
 
-Let's finally talk about the motions of the snake. We will explain mathematically the functions implemented for them and also talk how they interact with the phone app, especially with the joystick. But first let's begin to talk about how we move the servos from the microcontroller. The servos, as we said before, are controlled by a special board using pulse-wide modulation signals, which is a method of controlling the average power delivered by an electrical signal. Without entering into the details, we can easily send "pulses" of a certain length to the servos to move them from an angle A to an angle B
+Let's finally talk about the motions of the snake. We will explain mathematically the functions implemented for them and also talk how they interact with the phone app, especially with the joystick. But first let's begin to talk about how we move the servos from the microcontroller. The servos, as we said before, are controlled by a special board using pulse-wide modulation signals, which is a method of controlling the average power delivered by an electrical signal. Without entering into the details, we can easily send "pulses" of a certain length to the servos to move them from an angle A to an angle B.
+
+``` cpp
+#define MIN_PULSE_WIDTH 800
+#define MAX_PULSE_WIDTH 2000
+#define FREQUENCY_SERVO 50
+
+Driver driver = Driver(0x40);
+
+int rotate_with_min_max(int servo, double angle) {
+
+  int pulse_wide = map(angle, 0, 180, MIN_PULSE_WIDTH, MAX_PULSE_WIDTH);
+
+  return int(float(pulse_wide) / 1000000 * FREQUENCY_SERVO * 4096);
+}
+
+driver.setPWM(5, 0, rotate_with_min_max(5, 80));
+```
+Here we can see that we set the minimum and maximum pulses widths to 800 and 2000 microseconds respectively. This range specifies the range of pulses that we can send to rotate the servos from 0 to 180 degrees. A pulse of 800 microseconds means that the servo will move to the position 0 for example. Each pulse width is an angle to resume. Also we set the frequency to 50Hz allowing us to move each servo 50 times per second. Now the ```setPWM``` function here rotates the servo 5 to the position 80 degrees. The last we need is to convert the angle value into this pulse range, and it's done with this ```map``` function from Arduino that map a range of values to another range of values. Also a last step is to convert the value into a 12 bits resolution because it's how the PCA9685 is build.
   
 #### 1. Inchworm
 --> robin mon reuf
@@ -226,6 +244,8 @@ It turns out with surprise that the equation for a simple undulation was not rea
 ## Limitation
 
 ## Improvements
+
+--> calibration of the servos, second degree of freedom, avoiding wheels with a material, 
 
 
 
