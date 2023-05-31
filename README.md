@@ -7,6 +7,8 @@ In search and rescue scenarios, robotic snakes play a crucial role. Unlike tradi
 
 In the realm of medicine, robotic snakes hold promise as potential assistants in minimally invasive surgeries. Their flexible bodies and precise control enable access to hard-to-reach areas within the human body with minimal invasiveness. Surgeons can remotely control these robots, reducing the risk of complications and enhancing surgical outcomes in various medical specialties.
 
+##Preparation for the project
+
 ## Conception
 
 ### Material
@@ -18,15 +20,23 @@ In the realm of medicine, robotic snakes hold promise as potential assistants in
 
 #### 1.Important features
 
-The concept of the design is relatively simple, but there is some challenges. We had to design a joint that allowed a good range of motion, at least from 0 to 180 degrees. Moreover, the servo needed a strong hold with minimum looseness. In order to do so we design an interlocking piece system with one axis of rotation. Which allowed a maximum range of motion from -30 to 230 degree approxiamatly. For the servo we just designed a simple hold, in which we added four hole in order to screw the servos in. In those hole we had to put inserts  to have the thread pitch. This allowed the servo to have a firm grip and be really stable. 
+We had a relatively simple concept for the design, but we encountered some challenges. Our goal was to create a joint that could provide a wide range of motion, ideally spanning from 0 to 180 degrees. Additionally, we needed the servo to be securely held with minimal looseness.
+
+To achieve this, we devised an interlocking piece system with a single axis of rotation. This design allowed for a maximum range of motion of approximately -30 to 230 degrees. For the servo, we opted for a straightforward holder with four holes, allowing us to screw the servos in place. To ensure a secure fit, we used inserts to provide the necessary thread pitch. This approach ensured a firm grip and enhanced stability for the servo
 
 ![Alt Text](docs/servo_hold.png)
 #### 2. Movement propagation
 
-Next challenge was the transmission of the movement from one piece to another. This is done along the axis of rotation of the servo. To drive the next piece, we used one of the mounting head of the servo and duplicated its shape on our piece, so that when we assemble two piece together we can had the servo head from the top, which completes the assembly. We picked the star shaped head, the idea was that with its many points of contact with the next piece, it would help a lot driving the movement. This showed to be really successful, however the implementation of the design took multiple tries due to the complexity of the shape. After trial and errors, we found a well fitting shape
+Our next challenge was to transmit the movement from one piece to another along the servo's axis of rotation. To accomplish this, we picked one of the mounting heads of the servo. We duplicated its shape on our own piece so that when we assembled the two pieces together, we could attach the servo head from the top to the servo itself, completing the assembly.
+
+We opted for a star-shaped head as it provided multiple points of contact with the next piece, making it easier to drive the movement. This approach proved to be highly successful. However, implementing the design required multiple attempts due to the complexity of the shape. After trials and errors, we finally achieved a well-fitting shape.
     
 ![Alt Text](docs/animation_star v1.gif)
- In order to have the piece fit well and not dislock, we also made an extrusion beneath the surface and a hole in the corresponding part of the second piece. This allow to have a good interlocking system. To limit friction between the pieces we added a bearing in which the extrusion comes to fit.
+To ensure a secure fit and prevent any dislocation, we implemented two additional features. Firstly, we created an extrusion beneath the surface of one piece, and corresponding to it, a hole in the second piece. This design allowed for a solid interlocking system between the two pieces.
+
+Secondly, to minimize friction between the pieces, we incorporated a bearing. The extrusion was designed to fit snugly into the bearing, enabling smooth movement and reducing friction.
+
+These modifications proved effective in achieving a well-fitting and stable assembly.
  
 ![Alt Text](docs/bearring_animation.gif)
 #### 3. Allowing movement
