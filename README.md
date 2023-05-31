@@ -86,10 +86,15 @@ The main job of our electronic components is to control our servo motors. To do 
 
 ![Alt Text](docs/electronic.png)
 
-#### 1. Power the servos from the battery directly
+#### 1. Placing the Battery
+Our original plan involved the use of three Lipo batteries 7.4V, which required careful consideration in terms of placement and accessibility. To accommodate these batteries securely, we designed three additional pieces with built-in holders. This design modification ensured that the batteries were not only firmly secured within the snake but also easily replaceable when needed. After a long discussion with members of the DLL building and professor Koch, we kept only 1 of them since putting them in parallel to have bigger current wasn’t something easy and could have damaged the batteries. Since these batteries are designed to supply a large amount of current in a small amount of time, this was not a bad choice.
+
+
+
+#### 2. Power the servos from the battery directly
 When we look at the schema of the electronics, there something strange because we don't connect the + and - cables of the servos to the PCA9685, but we share all the ground of the servos with the ground of the battery, and all the + of the servos with the + of the battery. In fact this idea was from our professor because ... EXPLANATION.
 
-#### 2. Voltages and Currents
+#### 3. Voltages and Currents
 We had to look carefully at the constraints of our circuit because some components require specific voltages and currents. Here are the main requirements:
 
 * Operating voltage of the servo motors: 4.8-6V
@@ -100,7 +105,7 @@ We had to look carefully at the constraints of our circuit because some componen
 
 Here, since we don't use the PCA9685 to power the servos, but only control them, we don't need to use the V+ port of the board which is designed for this stuff. With that, we can only power the board's circuit by the VCC port which requires 5V as we said. Since the battery provides 7.4V, we used a DC-to-DC converter to change the output voltage of the battery to 5.5V which was enough for powering the servos and not too much to power the microcontroller and the board's controller circuit. 
 
-#### 3. Place for the electonics
+#### 4. Place for the electonics
 A big challenge for us in this project was to minimize the number and the size of electronic components, especially because the snake doesn't have much surface area available for inserting components. After some time of thinking, we end up with the idea of putting everything inside and above the head of the snake. It's a good choice since all the electonics are in one place and so it's centralized. And even if someone can say that they will be too much cables near the head, we thought it would be better than having some cables going to the tail, other to the head. 
 
 ### Cable Management
