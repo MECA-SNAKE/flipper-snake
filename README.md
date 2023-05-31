@@ -1,5 +1,7 @@
 # Flipper - Snake Robot
-First of all, here is a presentation of our snake robot: Flipper
+Flipper is a fully 3D-printed snake robot controlled by a react native app
+
+-- insert videos --
 
 ## Motivation 
 Serpentine robots are a groundbreaking innovation in robotics, captivating researchers and engineers with their unique physical characteristics and versatile capabilities. These flexible and slithering machines excel at navigating complex and confined spaces, offering immense potential in various fields, including search and rescue operations, industrial inspections, exploration, medical applications, surveillance and security, and hazardous environments.
@@ -21,6 +23,20 @@ Additionnally, we had the chance to talk about snake robot with a PhD Student of
 ## Conception
 
 ### Material
+
+* 1 LiPo Battery 2S 7.4V
+* 1 ESP8266 microcontroller
+* 1 PCA9685 servo motor controller
+* 1 LM2596 DC-to-DC converter
+* 12 DS6225MG Servo motors
+* 48 M3 inserts (SIZE ?)
+* 48 M3 10mm screws 
+* 1 Adapter cable ModelCraft 58604
+* A lot of cables and electric sheath
+* 28 small lego wheels
+* 2 Lasers 650mn 5V
+* 12 bearings (SIZE ?)
+
 
 ### Piece design
 
