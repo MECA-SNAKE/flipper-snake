@@ -75,11 +75,30 @@ The design is a cornerstone of the project. The smallest mistake could result in
     
 ### Electronics
 
-The main job of our electronic components is to control our servos motors. To do that, we used a PCA9685 board which is designed to send PWM (Pulse-Wide Modulation) signals to move them. This board is then connected to our microcontroller that will contain all the code to move the servos. 
+The main job of our electronic components is to control our servo motors. To do that, we used a PCA9685 board which is designed to send PWM (Pulse-Wide Modulation) signals to move them. This board is then connected to our microcontroller that will contain all the code to move the servos. However, we had quite a few problems powering the whole circuit.
 
 ![Alt Text](docs/electronic.png)
 
+#### 1. Power the servos from the battery directly
+When we look at the schema of the electronics, there something strange because we don't connect the + and - cables of the servos to the PCA9685, but we share all the ground of the servos with the ground of the battery, and all the + of the servos with the + of the battery. In fact this idea was from our professor because ... EXPLANATION.
+
+#### 2. Voltages and Currents
+We had to look carefully at the constraints of our circuit because some components require specific voltages and currents. Here are the main requirements:
+
+* Operating voltage of the servo motors: 4.8-6V
+* Operating voltage of the ESP8366: 3.3V
+* Voltage supply of the ESP8266: 5V
+* Battery supply voltage: 7.4V
+* Voltage supply of the PCA9685 board's circuit: 5V
+
+Since the battery provides 7.4V, we used a DC-to-DC converter to change the output voltage of the battery to 5.5V which was enough for powering the servos and not too much to power the microcontroller and the board's controller circuit. Yes it's only the circuit of the board that we care about because
+
+
+A big challenge for us in this project was to minimize the number and the size of electronic components, especially because the snake doesn't have much surface area available for inserting components. In addition to this, 
+
 ### Cable Management
+
+It requires more time for the cable management since we needed to solder the + and - for all servos and pass
   
 ## Code
  
