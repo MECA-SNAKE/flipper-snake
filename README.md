@@ -22,17 +22,17 @@ In the realm of medicine, robotic snakes hold promise as potential assistants in
 
     2. Why wheels ?
 
-  - **Electronics**
+  ### Electronics
 
-  - **Cable Management**
+  ### Cable Management
  ## Code
-  - **Application**
+  ### Application
 
-  - **Client-Server communication**
+  ### Client-Server communication
 
-  - **Controls**
+  ### Controls
 
-  - **Movements**
+  ### Movements
     1. Inchworm
     2. Concertina
     3. Undulated
