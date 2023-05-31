@@ -1,5 +1,5 @@
 # Flipper - Snake Robot
-Flipper is a fully 3D-printed snake robot controlled by a react native app
+Flipper is a fully 3D-printed snake robot controlled by a react native app. It is composed of 13 pieces for a total length of 1m20 and it’s capable of moving fluidly on the ground. Flipper has 3 mode of motions: the Inchworm (in the name), the Concertina (an accordion) and the Undulation (sinusoidal form). 
 
 -- insert videos --
 
@@ -200,16 +200,21 @@ const App: React.FC<Props> = () => {
 
 Client-side, the application utilizes a library called axios. Axios facilitates HTTP requests and enables the application to send commands and receive data from the snake. For instance, the ```sendRequests``` function is responsible for sending control commands such as starting or stopping the snake's motion, adjusting parameters like wavelength and amplitude, and selecting different motion modes like concertina or undulated.
 
-### Movement and Controls
+### Movements and Controls
 
 Let's finally talk about the motions of the snake. We will explain mathematically the functions implemented for them and also talk how they interact with the phone app, especially with the joystick. Let's begin with the Inchworm
   
-    1. Inchworm
+#### 1. Inchworm
+--> robin mon reuf
+
     
-    sfserdf
-    
-    2. Concertina
-    3. Undulated
+#### 2. Concertina
+
+--> insert gif of concertina
+
+As we see in the video, the snake contracts itself with a certain wavelength, lengthen half of its body, contracts the front half again while lengthening the tail. It has been surprisely the hardest motion because of this "step by step" motion on the ground. It's simple for it to rotate while moving and this was not expected. However, after a great deal of research, we realised that even in other projects, this movement was one of the hardest, at least more so than the undulated movement!
+
+#### 3. Undulated
     
 ## Limitation
 
