@@ -45,9 +45,9 @@ Additionnally, we had the chance to talk about snake robot with a PhD Student of
 
 #### 1.Important features
 
-We had a relatively simple concept for the design, but we encountered some challenges. Our goal was to create a joint that could provide a wide range of motion, ideally spanning from 0 to 180 degrees. Additionally, we needed the servo to be securely held with minimal looseness.
+We had a relatively simple concept for the design, but we encountered some challenges. Our goal was to create a joint that could provide a wide range of motion, ideally spanning at least 180 degrees. Additionally, we needed the servo to be securely held with minimal looseness.
 
-To achieve this, we devised an interlocking piece system with a single axis of rotation. This design allowed for a maximum range of motion of approximately -30 to 230 degrees. For the servo, we opted for a straightforward holder with four holes, allowing us to screw the servos in place. To ensure a secure fit, we used inserts to provide the necessary thread pitch. This approach ensured a firm grip and enhanced stability for the servo
+To achieve this, we devised an interlocking piece system with a single axis of rotation. This design allowed for a maximum range of motion of approximately -30 to 230 degrees (setting the 90 degree as the middle). For the servo motor, we opted for a straightforward holder with four holes, allowing us to screw the servos in place. To ensure a secure fit, we used inserts to provide the necessary thread pitch. This approach ensured a firm grip and enhanced stability for the servo.
 
 ![Alt Text](docs/servo_hold.png)
 #### 2. Movement propagation
@@ -66,7 +66,7 @@ These modifications proved effective in achieving a well-fitting and stable asse
 ![Alt Text](docs/bearring_animation.gif)
 #### 3. Allowing movement
 
-Last but crucial point for the snake success is the addition of wheels. Indeed without this the snake would not go forward. It is due to the fact that the lateral friction created by the wheels forces the movement in one direction, and therefore allows it to move forward. It mimics what a real snake's scales does, increase friction in some direction. We really wanted to hide them as much as possible, to avoid people thinking they are driving the snake, instead of the undulated motion. The effort made to reduce their visibility result in a clean and elegant desgin.
+Last but crucial point for the snake success is the addition of wheels. Indeed without this the snake would not go forward. It is due to the fact that the lateral friction created by the wheels forces the movement in one direction, and therefore allows it to move forward. It mimics what a real snake's scales does, increase friction in some direction. We really wanted to hide them as much as possible, to avoid people thinking they are driving the snake, instead of the undulated motion. The effort made to reduce their visibility result in a clean and elegant design.
 
 ![Alt Text](docs/design_wheels.png)
 #### 4. Thinking ahead
@@ -74,6 +74,10 @@ Last but crucial point for the snake success is the addition of wheels. Indeed w
 The design is a cornerstone of the project. The smallest mistake could result in the failure of the entire project. We tried as much as possible to think about all possible problem that we could run into. One of them was cable management. In order to finish with a clean project we designed some hole in the piece that would let the cable run from tail to head. Unfortunately, we could not use them as the hole intended to accomplish this task were designed to small to fit the servo's end of the cable. 
     
 ### Electronics
+
+The main job of our electronic components is to control our servos motors. To do that, we used a PCA9685 board which is designed to send PWM (Pulse-Wide Modulation) signals to move them. This board is then connected to our microcontroller that will contain all the code to move the servos. 
+
+![Alt Text](docs/electronic.png)
 
 ### Cable Management
   
