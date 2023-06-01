@@ -49,16 +49,17 @@ Furthermore, our journey led us to a valuable encounter with a PhD student from 
 
 #### 1.Important features
 
-We had a relatively simple concept for the design, but we encountered some challenges. Our goal was to create a joint that could provide a wide range of motion, ideally spanning at least 180 degrees. Additionally, we needed the servo to be securely held with minimal looseness.
+Initially, our design concept for Flipper was relatively straightforward. However, as we delved deeper into the design and development process of the pieces, we faced a number of challenges. Our primary objective was to create a joint capable of achieving a broad range of motion, ideally spanning at least 180 degrees. Additionally, we strived to ensure that the servo was securely held in place, with minimal looseness or play. Overcoming these obstacles became essential in achieving the desired functionality and stability of Flipper's design.
 
-To achieve this, we devised an interlocking piece system with a single axis of rotation. This design allowed for a maximum range of motion of approximately -30 to 230 degrees (setting the 90 degree as the middle). For the servo motor, we opted for a straightforward holder with four holes, allowing us to screw the servos in place. To ensure a secure fit, we used inserts to provide the necessary thread pitch. This approach ensured a firm grip and enhanced stability for the servo.
+To accomplish our goal, we developed an interlocking piece system featuring a single axis of rotation. This design enabled us to achieve a wide range of motion, spanning from approximately -30 to 230 degrees, with the middle position set at 90 degrees. By utilizing this system, we ensured that Flipper could move smoothly and effectively within this expansive range.
+For the servo motor, we opted for a simple yet effective holder design. This holder featured four holes strategically positioned to allow us to securely fasten the servos in place. To further enhance stability and ensure a tight fit, we utilized inserts with the appropriate thread pitch.
 
 ![Alt Text](docs/servo_hold.png)
 #### 2. Movement propagation
 
-Our next challenge was to transmit the movement from one piece to another along the servo's axis of rotation. To accomplish this, we picked one of the mounting heads of the servo. We duplicated its shape on our own piece so that when we assembled the two pieces together, we could attach the servo head from the top to the servo itself, completing the assembly.
+The subsequent obstacle we faced involved transmitting the motion from one piece to another along the servo's axis of rotation. To address this challenge, we leveraged the star-shaped mounting head of a servo as a reference point. By incorporating a corresponding hollow shape in our own piece design, we were able to seamlessly connect and interlock two segments (refer to the attached picture).
 
-We opted for a star-shaped head as it provided multiple points of contact with the next piece, making it easier to drive the movement. This approach proved to be highly successful. However, implementing the design required multiple attempts due to the complexity of the shape. After trials and errors, we finally achieved a well-fitting shape.
+Our decision to utilize a star-shaped head stemmed from its advantageous feature of offering multiple points of contact with the subsequent piece. This choice greatly facilitated the transmission of movement, making it more manageable to drive the desired motion. Although this approach proved highly successful, implementing the design was not without its challenges. The intricate shape posed complexities that necessitated multiple attempts and iterations. Through perseverance and a process of trial and error, we ultimately achieved a well-fitting shape that perfectly served our intended purpose.
     
 ![Alt Text](docs/animation_star v1.gif)
 To ensure a secure fit and prevent any dislocation, we implemented two additional features. Firstly, we created an extrusion beneath the surface of one piece, and corresponding to it, a hole in the second piece. This design allowed for a solid interlocking system between the two pieces.
