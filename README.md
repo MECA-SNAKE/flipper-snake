@@ -69,7 +69,6 @@ These modifications proved effective in achieving a well-fitting and stable asse
 Although this approach proved highly successful, implementing the design was not without its challenges. The intricate shape posed complexities that necessitated multiple attempts and iterations. Through perseverance and a process of trial and error, we ultimately achieved a well-fitting shape that perfectly served our intended purpose.
     
 ![Alt Text](docs/animation_star v1.gif)
-
  
 ![Alt Text](docs/bearring_animation.gif)
 #### 3. Allowing movement
