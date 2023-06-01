@@ -54,6 +54,7 @@ Initially, our design concept for Flipper was relatively straightforward. Howeve
 To accomplish our goal, we developed an interlocking piece system featuring a single axis of rotation. This design enabled us to achieve a wide range of motion, spanning from approximately -30 to 230 degrees, with the middle position set at 90 degrees. By utilizing this system, we ensured that Flipper could move smoothly and effectively within this expansive range.
 For the servo motor, we opted for a simple yet effective holder design. This holder featured four holes strategically positioned to allow us to securely fasten the servos in place. To further enhance stability and ensure a tight fit, we utilized inserts with the appropriate thread pitch.
 
+
 ![Alt Text](docs/servo_hold.png)
 #### 2. Movement propagation
 
