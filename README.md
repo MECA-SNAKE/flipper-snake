@@ -1,5 +1,8 @@
 # Flipper - Snake Robot
-Flipper is a fully 3D-printed snake robot controlled by a react native app. It is composed of 13 pieces for a total length of 1m20 and it’s capable of moving fluidly on the ground. Flipper has 3 mode of motions: the Inchworm (in the name), the Concertina (an accordion) and the Undulation (sinusoidal form). 
+Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intricately designed 3D-printed pieces. With its remarkable capabilities, Flipper elegantly navigates and explores its surroundings. This versatile robot boasts 3 distinct modes of motion: Inchworm, Concertina, and Undulation. The Inchworm mode enables precise inch-by-inch movement, the Concertina mode mimics the graceful accordion-like motion. In the Undulation mode, Flipper effortlessly slithers with a mesmerizing sinusoidal movement. Flipper's innovative design and diverse locomotion options make it a remarkable robotic creation. 
+
+
+Flipper is a 1m20, 13 piece, 3D-printed snake robot who is capable of exploring elegantly their surroundings. Flipper has 3 different modes of motion: the Inchworm (inchworm movement), the Concertina (accordion-like movement) and the Undulation (sinusoidal movement). 
 
 -- insert videos --
 
