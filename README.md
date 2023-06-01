@@ -78,17 +78,17 @@ A fundamental and indispensable component that ensures the accurate movement of 
 
 #### 4. Designing the Head
 
-![Alt Text](docs/head.png)
-
 The design of the head was significantly influenced by our considerations for cable management and electronic components. Our goal was to accommodate a microcontroller, servo board, converter, and all the necessary circuit cables within the head. While the assembly of these components inside the head may appear somewhat intricate, we believe it to be a sound approach. This design choice offers the advantage of providing protection for all the internal elements, despite the potential complexity of the arrangement.
+
+![Alt Text](docs/head.png)
 
 --> image de la tete avec l'electronic
 
 #### 5. Thinking ahead
 
-![Alt Text](docs/design_wheels.png)
-
 The design aspect of the project is of utmost importance, as even the smallest oversight could lead to the failure of the entire endeavor. We made a conscientious effort to anticipate and address all potential challenges that could arise. One such challenge was cable management. To ensure a polished end result, we incorporated holes in each piece to allow the cables to seamlessly traverse from the tail to the head. However, we encountered a setback as these holes turned out to be too small to accommodate the servo's cable end.
+
+![Alt Text](docs/design_wheels.png)
     
 ### Electronics
 
@@ -97,7 +97,9 @@ The primary role of our electronic components is to effectively control the serv
 ![Alt Text](docs/electronic.png)
 
 #### 1. Placing the Battery
-Our original plan involved the use of three Lipo batteries 7.4V, which required careful consideration in terms of placement and accessibility. To accommodate these batteries securely, we designed three additional pieces with built-in holders. This design modification ensured that the batteries were not only firmly secured within the snake but also easily replaceable when needed. After a long discussion with members of the DLL building and professor Koch, we kept only 1 of them since putting them in parallel to have bigger current wasn’t something easy and could have damaged the batteries. Since these batteries are designed to supply a large amount of current in a small amount of time, this was not a bad choice.
+
+Initially, our plan involved utilizing three 7.4V Lipo batteries, which necessitated careful consideration regarding their placement and accessibility. To securely accommodate these batteries, we devised three additional pieces with integrated holders. This design adaptation ensured that the batteries were not only firmly held within the snake but also easily replaceable when required.
+However, following an extensive discussion with members of the DLL building and Professor Koch, we made the decision to reduce the battery count to just one. The consideration was primarily due to the challenges associated with parallel connection to achieve a higher current output, which could potentially risk damaging the batteries. Given that these batteries are specifically designed to deliver a significant amount of current within a short duration, opting for a single battery proved to be a prudent choice
 
 ![Alt Text](docs/battery.png)
 
