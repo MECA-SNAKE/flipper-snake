@@ -103,41 +103,48 @@ However, following an extensive discussion with members of the DLL building and 
 
 ![Alt Text](docs/battery.png)
 
-#### 2. Power the servos from the battery directly
-When we look at the schema of the electronics, there something strange because we don't connect the + and - cables of the servos to the PCA9685, but we share all the ground of the servos with the ground of the battery, and all the + of the servos with the + of the battery. In fact this idea was from our professor because ... EXPLANATION.
+#### 2. Powering the servos directly from the battery
 
-#### 3. Voltages and Currents
-We had to look carefully at the constraints of our circuit because some components require specific voltages and currents. Here are the main requirements:
 
-* Operating voltage of the servo motors: 4.8-6V
-* Operating voltage of the ESP8366: 3.3V
-* Voltage supply of the ESP8266: 5V
-* Battery supply voltage: 7.4V
-* Voltage supply of the PCA9685 board's circuit: 5V
+Upon examining the electronic schema, an intriguing observation arises: the servo motors' positive and negative cables are not directly connected to the PCA9685. Instead, we have implemented a configuration where all the servo grounds are connected to the battery ground, and all the servo positive terminals are linked to the battery's positive terminal.
+This unique arrangement serves a specific purpose within the circuit design, providing a common ground for the servos and maintaining a shared power source through the battery's positive terminal. In fact this idea was from our professor because ... EXPLANATION.
 
-Here, since we don't use the PCA9685 to power the servos, but only control them, we don't need to use the V+ port of the board which is designed for this stuff. With that, we can only power the board's circuit by the VCC port which requires 5V as we said. Since the battery provides 7.4V, we used a DC-to-DC converter to change the output voltage of the battery to 5.5V which was enough for powering the servos and not too much to power the microcontroller and the board's controller circuit. 
+#### 3. Voltage and Current
 
-#### 4. Place for the electonics
-A big challenge for us in this project was to minimize the number and the size of electronic components, especially because the snake doesn't have much surface area available for inserting components. After some time of thinking, we end up with the idea of putting everything inside and above the head of the snake. It's a good choice since all the electonics are in one place and so it's centralized. And even if someone can say that they will be too much cables near the head, we thought it would be better than having some cables going to the tail, other to the head. 
+Our circuit design faces various constraints due to specific voltage and current requirements of different components:
+
+*The servo motors operate within a voltage range of 4.8-6V.
+*The ESP8366 module operates at 3.3V.
+*The ESP8266 module requires a voltage supply of 5V.
+*The battery supplies a voltage of 7.4V.
+*The PCA9685 board's circuit needs a 5V voltage supply.
+
+Since we utilize the PCA9685 board solely for servo control and not for powering them, we do not need to utilize the V+ port, which is intended for servo power supply. As a result, we power the board's circuit exclusively through the VCC port, requiring a 5V input voltage. Considering the battery supplies a voltage of 7.4V, we incorporated a DC-to-DC converter to transform the battery's output voltage to 5.5V. This voltage level proved sufficient to power the servos while remaining within an appropriate range for the microcontroller and the board's controller circuit 
+
+#### 4. Placement of the electronic components
+
+Minimizing the number and size of electronic components posed a significant challenge in our project, particularly due to the limited surface area available on the snake for their placement. After careful consideration, we devised a solution: consolidating and integrating all the electronic components inside and above the snake's head. This decision proved advantageous as it centralizes all the electronics in one location.
+Although one might argue that this approach leads to a cluster of cables near the head, we deemed it a superior alternative to the idea of routing cables to both the tail and the head. By concentrating the cables in one area, we achieved a more streamlined and organized design. Moreover, having all the electronics in close proximity is convenient as it provides easy access to the necessary components.
 
 ### Cable Management
-The cable management has been a step connected with the electronic design of the project. We managed to group them with many zipties all along the snake until they reached the head. At this point, we designed the head with little holes to pass the cables through it to reach the board and the microcontroller. 
+
+Efficient cable management is intricately intertwined with the electronic design of our project. To tackle this challenge, we successfully employed numerous zip ties to neatly bundle the cables together. At this juncture, we implemented a thoughtful design for the head, incorporating small holes that allow the cables to pass through and connect to the board and microcontroller. 
 
 --> image of the holes of the head
 
-The main challenge of that has been the soldering of the + and - cables for all servos to the ones of the battery after the converter. Even though it was very repetitive and not all that difficult, you had to be very careful not to get lost. If you miss a single weld, you're back to square one. 
+One of the primary challenges pertaining to the cables revolved around soldering the positive and negative wires of all the servos to the corresponding terminals of the battery after the converter. While the process itself was repetitive and not excessively complex, it required utmost caution to avoid any missteps. A single missed solder joint would necessitate starting over from the beginning, amplifying the importance of being attentive to detail throughout the soldering process.
 
 --> images of the soldering of the +/-
   
 ## Software Design
 
-The software is divided into 3 big parts: the code for **the motions**, the code for **the UI** and the **client-server communication**. In this section, we explain how we implemented them and why like that. The code for the UI is not really important to explain since it's only for the design of the app and it's React notions, but we will explain how the joystick works to fully control the snake.
+The software architecture is structured into three main components: **the motions**, the code for **the UI** and the code for **the client-server communication**. In this section, we will delve into the implementation details and the reasoning behind each component. While the UI code primarily focuses on the design aspects of the application and utilizes React principles, we will specifically highlight the functionality of the joystick, which plays a crucial role in fully controlling the snake.
 
 ### React Native App
 
-![Alt Text](docs/main_app.gif)
-
 The snake control application is a mobile app developed using React Native, a popular framework for building cross-platform applications. Written in TypeScript, a statically-typed superset of JavaScript, the code ensures code reliability through type checking. The snake control app allows users to control the snake's movements wirelessly. The application utilizes various components and libraries to create 2 main views: a home view where we can select the mode of motion and other parameters, and a user-friendly interface to control the snake after activating a motion.
+
+![Alt Text](docs/main_app.gif)
 
 The "game" mode of the application is designed in a way that facilitates the user experience of controlling the snake. We used a joystickbn to allow the user to control the snake. The app has taken various different faces throughout our project, initially, our goal was to be able to allow the user to enter any possible combination of parameters for the wavelength, amplitude, speed and frequency, but the more we tested out our snake's motion, we realized that random parameter inputs were not to the snake's advantage. We decided to abandon this idea to prevent the snake from making sudden movements and damaging itself. We have pre configured parameter inputs to plug into the snake at any moment the user wants it to turn right, left, go forwards or backwards. It's important to note that the application doesn't allow the user to go left or right if the inchworm motion is enabled and doesn't allow the user to go anywhere but forwards if the concertina motion is enabled. This is because we have to flip the snake over when the inchworm motion is enabled, imposing only 1 degree of freedom on the vertical axis.
 
