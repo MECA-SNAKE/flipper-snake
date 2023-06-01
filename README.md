@@ -154,9 +154,9 @@ Finally, with some solid background of computer science studies, we thought that
 
 ### Client-Server communication
 
-A big software implementation has been the communication between the ESP8266 and the react native app. The first idea was to communicate by Bluetooth Low Energy (BLE) since it’s very simple to deploy. We realized several days after that the ESP8266 does not have a bluetooth module but a WIFI module.
 
-We use it to deploy a web server on the ESP8266 to handle POST requests from the phone app to control the snake. Here for example is one of the route that we can use to reset the snake when a user clicks on the reset button.
+To establish communication between the ESP8266 and the React Native app, we initially planned to utilize Bluetooth Low Energy (BLE) due to its simplicity and ease of deployment. However, we soon realized that the ESP8266 lacked a Bluetooth module and instead possessed a Wi-Fi module. This prompted us to change our approach and leverage the Wi-Fi capabilities of the ESP8266.
+To enable communication between the React Native app and the ESP8266, we deployed a web server on the ESP8266. This web server served as a central hub to handle incoming POST requests from the app, allowing for seamless control of the snake. Within the web server, we implemented multiple routes to handle various POST requests from the client (the app). One example is the route designed for resetting the snake. When the user pressed the "reset" button in the app, a corresponding POST request was sent to the designated endpoint on the ESP8266. This triggered the necessary actions to reset the snake to its initial state. Here is the code that illustrates the "receive" function on the server side.
 
 ``` cpp
 // Server-side code
@@ -217,7 +217,9 @@ const App: React.FC<Props> = () => {
 }
 ```
 
-Client-side, the application utilizes a library called axios. Axios facilitates HTTP requests and enables the application to send commands and receive data from the snake. For instance, the ```sendRequests``` function is responsible for sending control commands such as starting or stopping the snake's motion, adjusting parameters like wavelength and amplitude, and selecting different motion modes like concertina or undulated.
+
+On the client-side (the app), the application harnesses the power of the axios library to facilitate HTTP requests, allowing seamless communication between the app and the snake robot. Axios serves as a valuable tool for sending commands and receiving data from the snake.
+Within the application, a function called "sendRequests" takes charge of sending control commands to the snake. This function enables various actions, such as initiating or halting the snake's motion, adjusting parameters such as wavelength and amplitude, and selecting different motion modes like concertina or undulated. By utilizing axios, these commands are efficiently transmitted to the snake, allowing for precise control and customization of its behavior
 
 ### Movements and Controls
 
