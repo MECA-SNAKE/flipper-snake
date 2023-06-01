@@ -254,11 +254,13 @@ Finally, it's important to note that the PCA9685 board operates at a 12-bit reso
 With the understanding of how the servos are controlled, let's now explore the different motions implemented for the snake.
   
 #### 1. Inchworm
---> robin mon reuf
 
-To achieve an inchworm-like motion, a modification is required in the snake's movement. Instead of moving in a lateral undulating manner, we need to flip over the snake to allow it to move freely in the vertical direction and straight forward, rather than to the side.
+--> insert gif of inchworm
+
+To achieve an inchworm-like motion, a modification is required in the snake's position. Instead of moving in a lateral undulating manner, we need to flip over the snake to allow it to move freely in the vertical direction and straight forward, rather than to the side.
 By flipping the snake, the direction of movement changes, and the snake can simulate the inchworm motion. This modification involves adjusting the sequence of segment movements and the coordination between the head and tail segments.
-To move, the robotic inchworm extends one segment forward while simultaneously contracting the adjacent segment backward. This action creates a looping or undulating motion similar to that of a real inchworm. 
+To move, the robotic inchworm extends one segment forward while simultaneously contracting the adjacent segment backward. This action creates a looping or undulating motion similar to that of a real inchworm.
+
 
     
 #### 2. Concertina
@@ -270,6 +272,8 @@ Extensive research revealed that this particular motion, known as the concertina
 The development and successful implementation of the concertina motion required careful analysis, experimentation, and fine-tuning to achieve the desired results. The challenges encountered during this process highlight the intricate nature of replicating snake locomotion in a robotic systems.
 
 #### 3. Undulated
+
+--> insert gif of concertina
 
 Lateral undulation, the typical undulating movement of a snake, was the primary locomotion type we aimed to achieve in our project. Implementing this motion required a closer look at the underlying mathematics.
 Surprisingly, the equation for a simple undulation was not overly complex; it could be represented by a sine wave. In theory, this may seem logical, but there was a crucial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
@@ -283,6 +287,15 @@ Overcoming this challenge was a significant milestone in our project, as it enab
 ## Improvements
 
 --> calibration of the servos, second degree of freedom, avoiding wheels with a material, 
+
+
+If we had more time to continue refining Flipper, there are several aspects we would have liked to reconsider and improve upon. One notable area of focus would be the mechanism used for locomotion. While Flipper currently utilizes wheels for movement, a more realistic and intriguing approach would be to explore the integration of scale-like materials.
+In nature, snakes navigate their environment by utilizing the overlapping scales on their bellies, which generate friction against the ground. This friction provides the snakes with a preferred direction of motion, allowing them to slither and maneuver effectively. By incorporating a scale-like material on Flipper's underside, we could potentially replicate this friction-based locomotion.
+Replacing the wheels with a scale-like material would not only enhance the authenticity and natural movement of our robotic snake but could also offer improved traction and control on various surfaces. The scales could be designed to interlock and move in a coordinated manner, creating a smooth undulating motion reminiscent of a real snake.
+Integrating such a scale-like material would undoubtedly require careful design and engineering considerations, including flexibility, durability, and the ability to mimic the frictional properties of snake scales. This is the reason why we initially had to abandon this idea.
+Given additional time and resources, exploring this scale-like material integration would have been an exciting avenue to pursue, further enhancing the authenticity and realism of Flipper's movements.
+
+
 
 
 
