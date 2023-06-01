@@ -219,11 +219,14 @@ const App: React.FC<Props> = () => {
 
 
 On the client-side (the app), the application harnesses the power of the axios library to facilitate HTTP requests, allowing seamless communication between the app and the snake robot. Axios serves as a valuable tool for sending commands and receiving data from the snake.
-Within the application, a function called "sendRequests" takes charge of sending control commands to the snake. This function enables various actions, such as initiating or halting the snake's motion, adjusting parameters such as wavelength and amplitude, and selecting different motion modes like concertina or undulated. By utilizing axios, these commands are efficiently transmitted to the snake, allowing for precise control and customization of its behavior
+Within the application, a function called "sendRequests" takes charge of sending control commands to the snake. This function enables various actions, such as initiating or halting the snake's motion, adjusting parameters such as wavelength and amplitude, and selecting different motion modes like concertina or undulated. By utilizing axios, these commands are efficiently transmitted to the snake, allowing for precise control and customization of its behavior.
 
 ### Movements and Controls
 
-Let's finally talk about the motions of the snake. We will explain mathematically the functions implemented for them and also talk how they interact with the phone app, especially with the joystick. But first let's begin to talk about how we move the servos from the microcontroller. The servos, as we said before, are controlled by a special board using pulse-wide modulation signals, which is a method of controlling the average power delivered by an electrical signal. Without entering into the details, we can easily send "pulses" of a certain length to the servos to move them from an angle A to an angle B.
+Let's dive into the motion capabilities of the snake and how we control the servos from the microcontroller. As previously mentioned, the servos are controlled by a specialized board using pulse-width modulation (PWM) signals. This method allows us to precisely control the average power delivered to the servos.
+In simple terms, we can send pulses of a specific length to the servos, which will move them from one angle (Angle A) to another angle (Angle B). By manipulating the length of these pulses, we can control the position and movement of the servos.
+Now, let's discuss the mathematical functions that govern the snake's motion and how they interact with the phone app, particularly the joystick control.
+
 
 ``` cpp
 #define MIN_PULSE_WIDTH 800
@@ -241,7 +244,14 @@ int rotate_with_min_max(int servo, double angle) {
 
 driver.setPWM(5, 0, rotate_with_min_max(5, 80));
 ```
-Here we can see that we set the minimum and maximum pulses widths to 800 and 2000 microseconds respectively. This range specifies the range of pulses that we can send to rotate the servos from 0 to 180 degrees. A pulse of 800 microseconds means that the servo will move to the position 0 for example. Each pulse width is an angle to resume. Also we set the frequency to 50Hz allowing us to move each servo 50 times per second. Now the ```setPWM``` function here rotates the servo 5 to the position 80 degrees. The last we need is to convert the angle value into this pulse range, and it's done with this ```map``` function from Arduino that map a range of values to another range of values. Also a last step is to convert the value into a 12 bits resolution because it's how the PCA9685 is build. With this said, let's talk about the motions
+
+
+In the provided code snippet, you can see that we define the minimum and maximum pulse widths as 800 and 2000 microseconds, respectively. These values represent the range of pulses that we can send to rotate the servos, allowing us to move them from 0 to 180 degrees. For instance, a pulse width of 800 microseconds would correspond to a servo position of 0 degrees.
+Additionally, we set the frequency to 50Hz, which means that we can update the position of each servo 50 times per second. This frequency ensures smooth and responsive servo movements.
+To rotate a specific servo to a desired angle, we use the "setPWM" function. In the provided example, the function "rotate_with_min_max" is called to convert the desired angle (80 degrees in this case) into the corresponding pulse width value within the defined range. This conversion is achieved using the "map" function from the Arduino library, which maps a range of values to another range of values.
+Finally, it's important to note that the PCA9685 board operates at a 12-bit resolution. Therefore, the pulse width value needs to be converted into a 12-bit value (ranging from 0 to 4095) to match the resolution of the PCA9685.
+
+With the understanding of how the servos are controlled, let's now explore the different motions implemented for the snake.
   
 #### 1. Inchworm
 --> robin mon reuf
@@ -251,7 +261,9 @@ Here we can see that we set the minimum and maximum pulses widths to 800 and 200
 
 --> insert gif of concertina
 
-As we see in the video, the snake contracts itself with a certain wavelength, lengthen half of its body, contracts the front half again while lengthening the tail. It has been surprisely the hardest motion because of this "step by step" motion on the ground. It's simple for it to rotate while moving and this was not expected. However, after a great deal of research, we realised that even in other projects, this movement was one of the hardest, at least more so than the undulated movement!
+In the video, you can observe that the snake performs a unique motion characterized by contracting itself with a specific wavelength, lengthening half of its body, contracting the front half once again, and simultaneously lengthening the tail. Surprisingly, this motion was proved to be the most challenging aspect of a snake's movements, mainly due to its "step-by-step" nature on the ground.
+Extensive research revealed that this particular motion, known as the concertina movement, is inherently complex, even in other snake projects. It presents greater difficulties compared to the undulated movement, which involves a smoother wave-like motion.
+The development and successful implementation of the concertina motion required careful analysis, experimentation, and fine-tuning to achieve the desired results. The challenges encountered during this process highlight the intricate nature of replicating snake locomotion in a robotic systems.
 
 #### 3. Undulated
 
