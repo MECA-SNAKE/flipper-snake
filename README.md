@@ -17,12 +17,12 @@ Our objective was to undertake a project that would have practical relevance in 
 While we may not have had direct experience in building robotic systems, we embraced the opportunity to expand our expertise. We were committed to researching the specific technologies and methodologies required to develop a robotic snake, including mechanical engineering principles and electrical systems.
 
 ## Preparation for the project
-To prepare ourselves for our first project in robotic, we looked on similar projects on the web to see how we could start it. It didn't take long to find some examples of snake robots and the 2 we've choosen are
+After doing extensive research, we encountered 2 existing snake projects that served as profound inspiration for Flipper: 
 
 * https://www.instructables.com/Bioinspired-Robotic-Snake/
 * https://www.instructables.com/Snake-Robot-1/
 
-Additionnally, we had the chance to talk about snake robot with a PhD Student of the Bio-Robotic Lab at EPFL. She gives us ideas and recommendations for a good project in less than a semester, such as keep only one degree of freedom for the motion and to look at sinusoidal function to understand how works the undulated motion of a snake.
+Furthermore, our journey led us to a valuable encounter with a PhD student from the Bio-Robotic Lab at EPFL. During our conversation, she generously shared her insights and recommendations for a successful project within a shorter timeframe. One key suggestion was to focus on a signle degree of freedom for motion, ensuring efficiency and feasability. Additionally, she encouraged us to explore the mechanics behind sinusoidal functions, shedding light on the intriguing undulated motion exhibited by snakes. These valuable ideas and guidance have profoundly influenced our approach to Flipper's developpement. 
 
 ## Conception
 
