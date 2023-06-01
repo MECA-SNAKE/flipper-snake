@@ -62,13 +62,13 @@ The subsequent obstacle we faced involved transmitting the motion from one piece
 
 Our decision to utilize a star-shaped head stemmed from its advantageous feature of offering multiple points of contact with the subsequent piece. This choice greatly facilitated the transmission of movement, making it more manageable to drive the desired motion. 
 
+![Alt Text](docs/animation_star v1.gif)
+
 To ensure a secure fit and prevent any dislocation, we implemented two additional features. Firstly, we created an extrusion beneath the surface of one piece, and corresponding to it, a hole in the second piece. This design allowed for a solid interlocking system between the two pieces.
 Secondly, to minimize friction between the pieces, we incorporated a bearing. The extrusion was designed to fit snugly into the bearing, enabling smooth movement and reducing friction.
 These modifications proved effective in achieving a well-fitting and stable assembly.
 
 Although this approach proved highly successful, implementing the design was not without its challenges. The intricate shape posed complexities that necessitated multiple attempts and iterations. Through perseverance and a process of trial and error, we ultimately achieved a well-fitting shape that perfectly served our intended purpose.
-    
-![Alt Text](docs/animation_star v1.gif)
  
 ![Alt Text](docs/bearring_animation.gif)
 #### 3. Allowing movement
