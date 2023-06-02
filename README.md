@@ -272,7 +272,7 @@ The development and successful implementation of the concertina motion required 
 
 #### 3. Undulated
 
---> insert gif of concertina
+--> insert gif of undulated
 
 Lateral undulation, the typical undulating movement of a snake, was the primary locomotion type we aimed to achieve in our project. Implementing this motion required a closer look at the underlying mathematics.
 Surprisingly, the equation for a simple undulation was not overly complex; it could be represented by a sine wave. In fact, let's consider it over his period 2$\pi$ with 12 equidistant points that represent the 12 servo motors of our snake.
@@ -314,11 +314,26 @@ First we have an outer loop going from 0 to 2$\pi$ that representing the input v
 
 We have now the time to explain how the joystick works to control the snake. We decided at the beginning of the project that we will only control the undulated motion because it was already quite challenging for one motion. Since controlling a snake is really close to a small electric car, a joystick is a great idea to move it. To make a joystick in react native, we needed a Gesture Handler framework called `react-native-gesture-handler` to handle the events of our fingers on the screen. After that, we created a react component that looks like a joystick and that can print the angle between the vertical axis and the finger. Vertically it’s 90 degrees and we can go to the right until 180 degrees and to the left until 0 degrees.
 
---> image of the joystick and the printing of the angle
+![Alt Text](docs/application.gif)
 
 Now the angle that we have can’t just be sent to the microcontroller. It’s because of our implementation of the sinusoidal function. Like we said, to make the snake go to the right, we add some integer to the base angle of the servo motors: 90 degrees. Since now we receive an angle between 0 and 180 degrees, we need to map the angle of the joystick to an offset range for the arduino code. 
 
-# image of the map function with a schema 
+``` cpp
+AsyncWebParameter* p = request->getParam("off", true);
+double value = p->value().toInt();
+
+int off = 0;
+if(value <= 180) {
+   off = map(value, 0, 180, -11, 11);
+   if(off != offset) {
+        update_offset(off);
+   }
+   request->send(200, "text/html", String(off)); 
+} else {
+   request->send(200, "text/html", "nothing"); 
+}
+``` 
+In this code, we map the `value` angle received from the app to an offset range of -11 to 11. To add a much better interaction we did 2 things. First, since the angle values of the joystick are updated very rapidly, and since we send each angle to the microcontroller, then in the arduino code here we change the offset only if it's different than the one already in the `offset` variable. And second thing, 
 
 With this done, we have a relatively smooth way to change the direction of the snake. 
 
