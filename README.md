@@ -1,7 +1,14 @@
 # Flipper - Snake Robot - Making Intellingent Things Project 2023 - Spring Semester
 Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intricately designed 3D-printed pieces. With its remarkable capabilities, Flipper elegantly navigates and explores its surroundings. This versatile robot boasts 3 distinct modes of motion: Inchworm, Concertina, and Undulation. The Inchworm mode enables precise inch-by-inch movement, the Concertina mode mimics the graceful accordion-like motion. In the Undulation mode, Flipper effortlessly slithers with a mesmerizing sinusoidal movement. Flipper's innovative design and diverse locomotion options make it a remarkable robotic creation. 
 
--- insert videos --
+
+![Alt Text](docs/video_1.gif)
+
+
+![Alt Text](docs/video_2.gif)
+
+
+![Alt Text](docs/video_3.gif)
 
 ## How to reproduce the snake
 
