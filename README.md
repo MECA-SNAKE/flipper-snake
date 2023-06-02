@@ -333,7 +333,19 @@ if(value <= 180) {
    request->send(200, "text/html", "nothing"); 
 }
 ``` 
-In this code, we map the `value` angle received from the app to an offset range of -11 to 11. To add a much better interaction we did 2 things. First, since the angle values of the joystick are updated very rapidly, and since we send each angle to the microcontroller, then in the arduino code here we change the offset only if it's different than the one already in the `offset` variable. And second thing, 
+In this code, we map the `value` angle received from the app to an offset range of -11 to 11. To add a much better interaction we did 2 things. First, since the angle values of the joystick are updated very rapidly, and since we send each angle to the microcontroller, then in the arduino code here we change the offset only if it's different than the one already in the `offset` variable. And second thing, we added a function to send only angles multiple of 10.
+
+```ts
+function findNearestMultipleOf10(input: number): number {
+    const remainder = input % 10;
+
+    if (remainder <= 5) {
+      return input - remainder;
+    }
+
+    return input + (10 - remainder);
+  }
+```
 
 With this done, we have a relatively smooth way to change the direction of the snake. 
 
