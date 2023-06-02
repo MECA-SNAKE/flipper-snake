@@ -310,17 +310,18 @@ Surprisingly, the equation for a simple undulation was not overly complex; it co
 
 ![Alt Text](docs/sine.png)
 
-We can see that undulation is quite similar to this function (or more generally with trigonometric functions). Let's now add some phase term to it to see how it changes the graph
+We can see that undulation is very similar to this graphed function, and to trigonometric functions in general. Let's now add some phase term to see how it changes the graph
 
 --> image phase pi/4 avec 12 points
 
-This function can be written like this $\sin(x + \frac{\pi}{4})$, where $\frac{\pi}{4}$ is the phase term, meaning that we shift the function to the left with a value of $\frac{\pi}{4}$. The idea to simulate a wave form now is to continuously change the phase term from 0 to 2$\pi$.
+This function can be written like this $\sin(x + \frac{\pi}{4})$, where $\frac{\pi}{4}$ is the phase term, meaning that we shift the function to the left with a value of $\frac{\pi}{4}$. The idea to simulate a wave form is to now continuously change the phase term from 0 to 2$\pi$.
 
 <iframe src="https://www.geogebra.org/calculator/bxwqg3t7?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
-We can see here a wave that seems to propagates. Now, each servo is represented by a point on the period of the graph, and each point represent a value of the sine function at a particular input `x` ; and with the animation, at a specific time `t`. The time variable can be now interpreted by this phase term that continuously change. If we say that each servo value has to follow on of this points, then it's value will look as the sine wave for a particular point `x`. 
+We can observe a wave that appears to propagate. In this scenario, each servo corresponds to a point on the graph's period, and each point represents a value of the sine function at a specific input x. When animated, the time variable t can now be interpreted through a continuously changing phase term.
+If we assume that each servo's value needs to align with one of these points, then its value will resemble the sine wave at a particular x coordinate. 
 
-In theory, this may seem logical, but there was a crucial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
+In theory, this may seem logical, but there is a curcial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
 However, through rigorous testing and experimentation, we discovered that our implementation of the sine wave equation for lateral undulation did indeed work. The coordinated movement of the servo motors and the discrete segments produced a convincing simulation of the undulating motion observed in real snakes. The final function for this motion is the following
 
 ``` cpp
@@ -364,7 +365,9 @@ if(value <= 180) {
    request->send(200, "text/html", "nothing"); 
 }
 ``` 
-In this code, we map the `value` angle received from the app to an offset range of -11 to 11. To add a much better interaction we did 2 things. First, since the angle values of the joystick are updated very rapidly, and since we send each angle to the microcontroller, then in the arduino code here we change the offset only if it's different than the one already in the `offset` variable. And second thing, we added a function to send only angles multiple of 10.
+In this code snippet, we utilize a mapping technique to convert the received value angle from the app into an offset range of -11 to 11. To enhance the interaction experience, we have implemented two key improvements.
+Firstly, considering that the joystick angle values are updated rapidly, and each angle is sent to the microcontroller, we optimize the code in the Arduino by modifying the offset only when it differs from the current value stored in the offset variable. This way, unnecessary updates are avoided, resulting in more efficient processing.
+Secondly, we have incorporated a function to transmit only angles that are multiples of 10. By doing so, we ensure that the transmitted angles have a finer resolution and are more aligned with meaningful increments, facilitating smoother and more precise control.
 
 ```ts
 function findNearestMultipleOf10(input: number): number {
@@ -386,6 +389,7 @@ With this done, we have a relatively smooth way to change the direction of the s
 Our project has encountered several noteworthy limitations that have influenced our progress and achievements. It is essential to acknowledge and comprehend these limitations, as they have played a crucial role in shaping our decision-making process. Moreover, we have successfully developed solutions within these boundaries posed by these limitations. By recognizing and addressing these limitations, we gain valuable insights for future improvements and refinements, and can maximize our project’s potential.
 
 ### Sensors
+
 Having managed to attain our project’s priority, a functional undulating snake, our desire was to implement additional features, such as sensors. 
 
 At first, we implemented sensors that would be able to detect potholes in its path. By wanting to challenge and implement a more impressive sensor functionality, we hoped, in a second step, that the snake would detect not potholes but objects, walls or other obstacles in its path, and that it would avoid these obstacles, either by changing his course or by stopping. 
@@ -418,10 +422,12 @@ After conducting thorough research, we have determined that the Arduino ESP8266 
 To address this challenge, a viable solution would have been to utilize two interconnected Arduino ESP8266 devices - one dedicated to handling the snake’s movements and the other focused on sensor operations. This arrangement would have allowed for seamless collaboration between the two components, enabling them to function harmoniously and resolve the issue at hand.
 
 ### Concertina movement
+
 Another goal we had originally envisioned to incorporate was to implement the concertina movement into our robotic snake's locomotion to navigate through narrow passages. This is a method of locomotion used by certain snake species in confined spaces. It involves the snake alternately anchoring parts of its body against the walls or objects and then pulling the rest of its body forward, creating accordion-like folds.
 However, we faced challenges in implementing this complex motion due to the precise servo control and the internal force required. Anchoring the front portion of the body and extending it forward to pull the rest of the body along proved difficult. The inadequate grip of the wheels and the snake's insufficient weight made it challenging to generate the necessary downforce for effective propulsion. Due to insufficient downforce, the snake was pushed backward while extending it's front section, counteracting its forward movement. Similarly, when contracting the rear, the front part of the snake was pulled backward, causing it to remain stationary or make minimal progress.
 
 ### Second degree of freedom
+
 Initially, our plan was to incorporate a secondary degree of movement that would allow the snake to slide over obstacles or steps. 
 However, implementing this proved challenging since it required two servos per body part to enable both side-to-side and up-and-down motion. With our current setup of 12 servos, one for each body part, implementing this additional movement would have significantly increased the size of each piece, resulting in a larger and significantly heavier snake. Furthermore, our existing battery solution would not have been capable of powering an additional 12 servos. 
 With additional time, we would have explored the possibility of introducing a secondary degree of movement to specific sections of the snake. For instance, we could have enabled the tail to mimic the rattling motion seen in rattlesnakes, or elevated the head to enhace sensory capabilities for better environmental scanning.
@@ -429,14 +435,17 @@ With additional time, we would have explored the possibility of introducing a se
 ## Improvements
 
 ### Calibration of each servo
+
 We could improve the robot by enhancing the calibration of the servos. Currently, we have observed a slight deviation to the right in the snake's movement. Upon investigation, we determined that the issue stems from the servos' range being from -20 to 160 degrees rather than the desired 0 to 180 degrees. This discrepancy is a result of servo calibration. To rectify this, we need to determine the precise pulse signal values that allow for movement to any angle between 0 and 180 degrees. Additionally, this calibration process must be done individually for each servo, rather than having a general minimum and maximum pulse width. With a more meticulous servo calibration, we can significantly enhance the snake's movement.
 
 ### Adding a new degree of freedom
+
 Another important improvement involves introducing an additional degree of freedom, enabling the snake to lift its body upward. This added capability would facilitate a movement commonly observed in snakes known as "sidewinding," where the snake lifts a portion of its body to reduce friction and slither sideways. Incorporating this feature would greatly expand the range of movements the robot can perform.
 
 Furthermore, it would be beneficial to incorporate sensors that prevent the snake from colliding with obstacles. Achieving this requires adding another NodeMCU and establishing communication between the two units. More details regarding this aspect will be discussed in the limitations.
 
 ### Replacing the wheels
+
 Lastly, a noteworthy advancement would be to replace the wheels with a material that mimics the scales found on snakes. This modification would provide a more lifelike appearance to the robot, aligning it with the characteristics of actual snakes. However, it is important to note that this particular enhancement falls under the realm of a research-level project.
 
 
