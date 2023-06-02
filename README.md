@@ -25,7 +25,6 @@ Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intri
 * Change the ssid and password of your hotspot
 * Upload the code to the board and connect the battery to the snake
 * Verify in Serial Monitor that it prints Wifi Connected indicating that the board successfully connected to your wifi
-* Disconnect and have fun 
 
 ### The React Native App
 * Clone the react-native-esp-app repository locally on your machine. 
@@ -33,11 +32,14 @@ Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intri
 * Install expo-cli with this terminal command : `npm install -g expo-cli` / If there is a problem with windows restriction, copy paste this command into the Powershell `Set-ExecutionPolicy -Score CurrentUser -ExecutionPolicy RemoteSigned`
 * Install expo client on your phone
 * Navigate to the : react-native-esp-app folder on your computer. In App.tsx change line 53’s IP address with the IP address that will be printed in the Serial Monitor of the Arduino IDE app. 
-* write expo start in the terminal
+* Write `expo start` in the terminal
 * Scan the QR code with your phone, which will open the app
 
-
-
+### How to launch the snake
+* Enable your hotspot
+* Start the app on your phone
+* Connect the battery to the snake
+* Have fun!
 
 
 ## Motivation 
