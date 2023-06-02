@@ -310,7 +310,18 @@ void undulated_motion() {
   }
 }
 ```
-First we have an outer loop going from 0 to 2$\pi$ that representing the input values of the function (it's domain of definition). We convert them into radians to make easier the calculation. Then we have this inner loop that represent the servos taking values from the sine wave over time. The function is different because we added parameters to change the behaviour of the function. What we see is that at a specific value `i` (so fixing the wave at a certain time), each servo is taking some value between `[90 - amplitude, 90 + amplitude]` accordingly to the shape of the sine function for a specific wavelength. The last thing to say is that to change the speed of the wave, we can add a speed term, here called `frequency`, such that we complete a full period of the function in a different amount of time. Interpeting this with the complexe plane, this represent the speed at which we rotate around the unit circle.
+First we have an outer loop going from 0 to 2$\pi$ that representing the input values of the function (it's domain of definition). We convert them into radians to make easier the calculation. Then we have this inner loop that represent the servos taking values from the sine wave over time. The function is different because we added parameters to change the behaviour of the function. What we see is that at a specific value `i` (so fixing the wave at a certain time), each servo is taking some value between `[90 - amplitude, 90 + amplitude]` accordingly to the shape of the sine function for a specific wavelength. Additionnally, to say is that to change the speed of the wave, we can add a speed term, here called `frequency`, such that we complete a full period of the function in a different amount of time. Interpeting this with the complexe plane, this represent the speed at which we rotate around the unit circle. A last thing to say is that to make the snake go to the right or to the left, we add an integer value called `offset`, to the base angle which is 90 degree. With that, each servo will go a little bit more to the left or to the righteach each point in time.
+
+We have now the time to explain how the joystick works to control the snake. We decided at the beginning of the project that we will only control the undulated motion because it was already quite challenging for one motion. Since controlling a snake is really close to a small electric car, a joystick is a great idea to move it. To make a joystick in react native, we needed a Gesture Handler framework called `react-native-gesture-handler` to handle the events of our fingers on the screen. After that, we created a react component that looks like a joystick and that can print the angle between the vertical axis and the finger. Vertically it’s 90 degrees and we can go to the right until 180 degrees and to the left until 0 degrees.
+
+--> image of the joystick and the printing of the angle
+
+Now the angle that we have can’t just be sent to the microcontroller. It’s because of our implementation of the sinusoidal function. Like we said, to make the snake go to the right, we add some integer to the base angle of the servo motors: 90 degrees. Since now we receive an angle between 0 and 180 degrees, we need to map the angle of the joystick to an offset range for the arduino code. 
+
+# image of the map function with a schema 
+
+With this done, we have a relatively smooth way to change the direction of the snake. 
+
     
 ## Limitation
 
