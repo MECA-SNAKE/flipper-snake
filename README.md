@@ -44,7 +44,7 @@ Furthermore, our journey led us to a valuable encounter with a PhD student from 
 
 ### Piece design
 
-![Alt Text](docs/animation_complete v7.gif)
+![Alt Text](docs/animation_complete_v7.gif)
 
 
 #### 1.Important features
