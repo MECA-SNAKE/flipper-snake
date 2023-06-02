@@ -261,7 +261,6 @@ To achieve an inchworm-like motion, a modification is required in the snake's po
 By flipping the snake, the direction of movement changes, and the snake can simulate the inchworm motion. This modification involves adjusting the sequence of segment movements and the coordination between the head and tail segments.
 To move, the robotic inchworm extends one segment forward while simultaneously contracting the adjacent segment backward. This action creates a looping or undulating motion similar to that of a real inchworm.
 
-
     
 #### 2. Concertina
 
@@ -276,7 +275,13 @@ The development and successful implementation of the concertina motion required 
 --> insert gif of concertina
 
 Lateral undulation, the typical undulating movement of a snake, was the primary locomotion type we aimed to achieve in our project. Implementing this motion required a closer look at the underlying mathematics.
-Surprisingly, the equation for a simple undulation was not overly complex; it could be represented by a sine wave. In theory, this may seem logical, but there was a crucial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
+Surprisingly, the equation for a simple undulation was not overly complex; it could be represented by a sine wave. In fact, let's consider a sine wave over his period 2 $\pi$
+
+![Alt Text](docs/sine.png)
+
+We can see that undulation is quite similar to this function (or more generally with trigonometric functions). Let's now add some phase term to it to see how it changes the graph:
+
+In theory, this may seem logical, but there was a crucial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
 However, through rigorous testing and experimentation, we discovered that our implementation of the sine wave equation for lateral undulation did indeed work. The coordinated movement of the servo motors and the discrete segments produced a convincing simulation of the undulating motion observed in real snakes.
 
 Overcoming this challenge was a significant milestone in our project, as it enabled us to replicate the characteristic locomotion of snakes. Although our snake's body consists of fixed-length segments, we were able to utilize the principles of the sine wave to achieve a fluid and lifelike undulation
