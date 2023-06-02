@@ -279,6 +279,7 @@ Surprisingly, the equation for a simple undulation was not overly complex; it co
 
 ![Alt Text](docs/sine.png)
 
+We can see that undulation is quite similar to this function (or more generally with trigonometric functions). Let's now add some phase term to it to see how it changes the graph:
 
 In theory, this may seem logical, but there was a crucial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
 However, through rigorous testing and experimentation, we discovered that our implementation of the sine wave equation for lateral undulation did indeed work. The coordinated movement of the servo motors and the discrete segments produced a convincing simulation of the undulating motion observed in real snakes.
