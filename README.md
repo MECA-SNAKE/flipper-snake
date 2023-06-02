@@ -392,7 +392,24 @@ At first, we implemented sensors that would be able to detect potholes in its pa
 
 The HC-SR04 ultrasonic sensors, utilizes ultrasonic waves to measure distances and detect objects in its surrounding environment. The working principle of the HC-SR04 sensor involves emitting ultrasonic pulses and calculating the time it takes for the echoes to return. It consists of two main components: a transmitter and a receiver. The transmitter emits high-frequency sound waves, which propagate through the air and bounce off any objects in their path. The receiver then detects the echoes and measures the time interval between transmission and reception. By using the speed of sound as a constant, the sensor can calculate the distance to the objects based on the time taken for the echoes to return. 
 
-→ insert image of the function
+```cpp
+#define TRIGGER_PIN 12
+#define ECHO_PIN 14
+#define SOUND_VELOCITY 0.034
+#define CM_TO_INCH 0.39370100
+
+float distance_sensor() {
+  digitalWrite(TRIGGER_PIN, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(TRIGGER_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER_PIN, LOW);
+  
+  // Calculate the distance
+  return pulseIn(ECHO_PIN, HIGH) * SOUND_VELOCITY/2;
+}
+```
 
 The successful implementation of the Arduino code and the subsequent testing initially led us to believe that the sensor task was successfully completed. However, upon attempting to test the entire system, including the snake and sensors, we immediately observed that the snake was no longer performing its intended movements as programmed.
 
