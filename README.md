@@ -1,4 +1,4 @@
-# Flipper - Snake Robot - Making Intellingent Things Project 2023 - Spring 2023
+# Flipper - Snake Robot - Making Intellingent Things Project 2023 - Spring Semester
 Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intricately designed 3D-printed pieces. With its remarkable capabilities, Flipper elegantly navigates and explores its surroundings. This versatile robot boasts 3 distinct modes of motion: Inchworm, Concertina, and Undulation. The Inchworm mode enables precise inch-by-inch movement, the Concertina mode mimics the graceful accordion-like motion. In the Undulation mode, Flipper effortlessly slithers with a mesmerizing sinusoidal movement. Flipper's innovative design and diverse locomotion options make it a remarkable robotic creation. 
 
 -- insert videos --
@@ -6,10 +6,10 @@ Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intri
 ## How to reproduce the snake
 
 ### Mount the snake
-* Take the stl files of the snake. Print the main piece 8 times (the one without the holder for a battery), 3 times the one that can hold a battery, the tail one time and the head one time. Pay attention to fully clean the holes for the wheels to avoid contact with the pieces
+* Take the stl files of the snake. Print the main piece 8 times (the one without the holder for a battery), 3 times the one that can hold a battery, the tail one time, the head one time and the snake head on time. Pay attention to fully clean the holes for the wheels to avoid contact with the pieces
 * Print also the 28 wheels and the 14 sticks to place them below the pieces
 * Follow the first animation of the piece design section to mount the pieces together with the bearings and servos. Don’t forget to place the pieces that can hold a battery. You can place them where you want however keep in mind that they can help to pass cables through them. After that you should have a full length snake. 
-* The subsequent crucial stage involves mounting the boards on the head piece and the battery in its holder, as well as connecting the cables between each other and then connecting them to the PCA board, NodeMCU, the DC-to-DC converter and the battery. Exercise caution during this step, ensuring that you correctly connect the cables as per the provided diagram. Regarding the cable lengths required for a complete assembly, the yellow cable spans 5 meters, while the ground and the plus cables measure 3 meters each.
+* Mount the boards on the head piece as you will see in the animations, and the battery in its holder. A crucial stage now is to make the cable management. Follow the images and the details below in the readme to see how to connect all the cables, as well as connecting the cables to the PCA board, NodeMCU, the DC-to-DC converter and the battery. Exercise caution during this step, ensuring that you correctly connect the cables as per the provided diagram. Regarding the cable lengths required for a complete assembly, the yellow cable spans 5 meters, while the ground and the plus cables measure 3 meters each. For the head of the snake, you can place it as you want.
 
 ### Arduino code
 * Download these following softwares on your computer : 
@@ -22,8 +22,8 @@ Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intri
 
 * Clone the Arduino code from the arduino-commands repository 
 * Connect your computer to the ESP8266 board via a micro usb cable
-* Change the ssid and password 
-* Upload the code to the board 
+* Change the ssid and password of your hotspot
+* Upload the code to the board and connect the battery to the snake
 * Verify in Serial Monitor that it prints Wifi Connected indicating that the board successfully connected to your wifi
 * Disconnect and have fun 
 
@@ -138,19 +138,18 @@ However, following an extensive discussion with members of the DLL building and 
 
 #### 2. Powering the servos directly from the battery
 
-
 Upon examining the electronic schema, an intriguing observation arises: the servo motors' positive and negative cables are not directly connected to the PCA9685. Instead, we have implemented a configuration where all the servo grounds are connected to the battery ground, and all the servo positive terminals are linked to the battery's positive terminal.
-This unique arrangement serves a specific purpose within the circuit design, providing a common ground for the servos and maintaining a shared power source through the battery's positive terminal. In fact this idea was from our professor because ... EXPLANATION.
+This unique arrangement serves a specific purpose within the circuit design, providing a common ground for the servos and maintaining a shared power source through the battery's positive terminal. In fact this idea was from our professor because we were worried that there would be too much current from the servos. Using only the signal pins means we don't have to power the servos via the PCA9685. 
 
 #### 3. Voltage and Current
 
 Our circuit design faces various constraints due to specific voltage and current requirements of different components:
 
-*The servo motors operate within a voltage range of 4.8-6V.
-*The ESP8366 module operates at 3.3V.
-*The ESP8266 module requires a voltage supply of 5V.
-*The battery supplies a voltage of 7.4V.
-*The PCA9685 board's circuit needs a 5V voltage supply.
+* The servo motors operate within a voltage range of 4.8-6V.
+* The ESP8366 module operates at 3.3V.
+* The ESP8266 module requires a voltage supply of 5V.
+* The battery supplies a voltage of 7.4V.
+* The PCA9685 board's circuit needs a 5V voltage supply.
 
 Since we utilize the PCA9685 board solely for servo control and not for powering them, we do not need to utilize the V+ port, which is intended for servo power supply. As a result, we power the board's circuit exclusively through the VCC port, requiring a 5V input voltage. Considering the battery supplies a voltage of 7.4V, we incorporated a DC-to-DC converter to transform the battery's output voltage to 5.5V. This voltage level proved sufficient to power the servos while remaining within an appropriate range for the microcontroller and the board's controller circuit 
 
