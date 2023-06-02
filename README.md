@@ -264,7 +264,7 @@ To move, the robotic inchworm extends one segment forward while simultaneously c
     
 #### 2. Concertina
 
---> concertina
+![Alt Text](docs/concertina.gif)
 
 In the video, you can observe that the snake performs a unique motion characterized by contracting itself with a specific wavelength, lengthening half of its body, contracting the front half once again, and simultaneously lengthening the tail. Surprisingly, this motion was proved to be the most challenging aspect of a snake's movements, mainly due to its "step-by-step" nature on the ground.
 Extensive research revealed that this particular motion, known as the concertina movement, is inherently complex, even in other snake projects. It presents greater difficulties compared to the undulated movement, which involves a smoother wave-like motion.
