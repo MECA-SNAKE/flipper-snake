@@ -255,7 +255,7 @@ With the understanding of how the servos are controlled, let's now explore the d
   
 #### 1. Inchworm
 
---> insert gif of inchworm
+![Alt Text](docs/inchworm.gif)
 
 To achieve an inchworm-like motion, a modification is required in the snake's position. Instead of moving in a lateral undulating manner, we need to flip over the snake to allow it to move freely in the vertical direction and straight forward, rather than to the side.
 By flipping the snake, the direction of movement changes, and the snake can simulate the inchworm motion. This modification involves adjusting the sequence of segment movements and the coordination between the head and tail segments.
@@ -264,7 +264,7 @@ To move, the robotic inchworm extends one segment forward while simultaneously c
     
 #### 2. Concertina
 
---> insert gif of concertina
+--> concertina
 
 In the video, you can observe that the snake performs a unique motion characterized by contracting itself with a specific wavelength, lengthening half of its body, contracting the front half once again, and simultaneously lengthening the tail. Surprisingly, this motion was proved to be the most challenging aspect of a snake's movements, mainly due to its "step-by-step" nature on the ground.
 Extensive research revealed that this particular motion, known as the concertina movement, is inherently complex, even in other snake projects. It presents greater difficulties compared to the undulated movement, which involves a smoother wave-like motion.
