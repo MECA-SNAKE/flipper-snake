@@ -287,7 +287,7 @@ This function can be written like this $\sin(x + \frac{\pi}{4})$, where $\frac{\
 
 <iframe src="https://www.geogebra.org/calculator/bxwqg3t7?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
 
-We can see here a wave that seems to propagates. Now, each servo is represented by a point on the period of the graph, and each point represent a value of the sine function at a particular input $x$ ; and with the animation, at a specific time $t$. The time variable can be now interpreted by this phase term that continuously change. If we say that each servo value has to follow on of this points, then it's value will look as the sine wave for a particular point $x$. 
+We can see here a wave that seems to propagates. Now, each servo is represented by a point on the period of the graph, and each point represent a value of the sine function at a particular input `x` ; and with the animation, at a specific time `t`. The time variable can be now interpreted by this phase term that continuously change. If we say that each servo value has to follow on of this points, then it's value will look as the sine wave for a particular point `x`. 
 
 In theory, this may seem logical, but there was a crucial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
 However, through rigorous testing and experimentation, we discovered that our implementation of the sine wave equation for lateral undulation did indeed work. The coordinated movement of the servo motors and the discrete segments produced a convincing simulation of the undulating motion observed in real snakes. The final function for this motion is the following
@@ -310,7 +310,7 @@ void undulated_motion() {
   }
 }
 ```
-First we have an outer loop going from 0 to 2$\pi$ that representing the input values of the function (it's domain of definition). 
+First we have an outer loop going from 0 to 2$\pi$ that representing the input values of the function (it's domain of definition). We convert them into radians to make easier the calculation. Then we have this inner loop that represent the servos taking values from the sine wave over time. The function is different because we added parameters to change the behaviour of the function. What we see is that at a specific value `i` (so fixing the wave at a certain time), each servo is taking some value between `[90 - amplitude, 90 + amplitude]` accordingly to the shape of the sine function for a specific wavelength. The last thing to say is that to change the speed of the wave, we can add a speed term, here called `frequency`, such that we complete a full period of the function in a different amount of time. Interpeting this with the complexe plane, this represent the speed at which we rotate around the unit circle.
     
 ## Limitation
 
