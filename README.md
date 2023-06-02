@@ -310,8 +310,6 @@ The development and successful implementation of the concertina motion required 
 
 #### 3. Undulated
 
---> insert gif of undulated
-
 Lateral undulation, the typical undulating movement of a snake, was the primary locomotion type we aimed to achieve in our project. Implementing this motion required a closer look at the underlying mathematics.
 Surprisingly, the equation for a simple undulation was not overly complex; it could be represented by a sine wave. In fact, let's consider it over his period 2$\pi$ with 12 equidistant points that represent the 12 servo motors of our snake.
 
