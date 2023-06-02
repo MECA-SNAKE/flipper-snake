@@ -1,0 +1,33 @@
+2023.05.22 11:58:26 INFO  Started: Metals version 0.11.12 in workspace 'C:\Users\lea\EPFL\BA4\MIT\snake\application\react-native-esp-app' for client Visual Studio Code 1.78.2.
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:C:\Users\lea\EPFL\BA4\MIT\snake\application\react-native-esp-app\.metals\metals (H2 2.1)
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory allAppliedMigrations
+INFO: Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.022s)
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.schemahistory.JdbcTableSchemaHistory create
+INFO: Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": << Empty Schema >>
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "1 - Create tables"
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "2 - Server discovery"
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "3 - Jar symbols"
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.command.DbMigrate doMigrateGroup
+INFO: Migrating schema "PUBLIC" to version "4 - Fingerprints"
+May 22, 2023 11:58:26 AM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Successfully applied 4 migrations to schema "PUBLIC", now at version v4 (execution time 00:00.061s)
+2023.05.22 11:58:26 INFO  time: initialize in 0.77s
+2023.05.22 11:58:27 WARN  Build server is not auto-connectable.
+2023.05.22 11:58:27 WARN  no build tool detected in workspace 'C:\Users\lea\EPFL\BA4\MIT\snake\application\react-native-esp-app'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.05.22 12:01:58 INFO  Shutting down server
+2023.05.22 12:01:58 INFO  shutting down Metals
+2023.05.22 12:01:58 INFO  Exiting server
