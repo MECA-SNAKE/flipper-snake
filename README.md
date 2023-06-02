@@ -82,7 +82,7 @@ The design of the head was significantly influenced by our considerations for ca
 
 ![Alt Text](docs/head.png)
 
---> image de la tete avec l'electronic
+![Alt Text](docs/head_cables.jpg)
 
 #### 5. Thinking ahead
 
@@ -130,7 +130,7 @@ Although one might argue that this approach leads to a cluster of cables near th
 
 Efficient cable management is intricately intertwined with the electronic design of our project. To tackle this challenge, we successfully employed numerous zip ties to neatly bundle the cables together. At this juncture, we implemented a thoughtful design for the head, incorporating small holes that allow the cables to pass through and connect to the board and microcontroller. 
 
---> image of the holes of the head
+![Alt Text](docs/holes.jpg)
 
 One of the primary challenges pertaining to the cables revolved around soldering the positive and negative wires of all the servos to the corresponding terminals of the battery after the converter. While the process itself was repetitive and not excessively complex, it required utmost caution to avoid any missteps. A single missed solder joint would necessitate starting over from the beginning, amplifying the importance of being attentive to detail throughout the soldering process.
 
