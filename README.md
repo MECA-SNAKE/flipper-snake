@@ -5,7 +5,37 @@ Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intri
 
 ## How to reproduce the snake
 
---> marche à suivre
+* Take the stl files of the snake. Print the main piece 8 times (the one without the holder for a battery), 3 times the one that can hold a battery, the tail one time and the head one time.
+* Print also the 28 wheels and the 14 sticks to place them below the pieces
+* Follow the first animation of the piece design section to mount the pieces together with the bearings and servos. Don’t forget to place the pieces that can hold a battery. You can place them where you want however keep in mind that they can help to pass cables through them. After that you should have a full length snake. 
+* The subsequent crucial stage involves mounting the boards on the head piece and the battery in its holder, as well as connecting the cables between each other and then connecting them to the PCA board, NodeMCU, the DC-to-DC converter and the battery. Exercise caution during this step, ensuring that you correctly connect the cables as per the provided diagram. Regarding the cable lengths required for a complete assembly, the yellow cable spans 5 meters, while the ground and the plus cables measure 3 meters each.
+
+* Copy (clone) the react-native-esp-app repository locally on your machine. 
+* Install NodeJS for your operating system: https://radixweb.com/blog/installing-npm-and-nodejs-on-windows-and-mac#windows
+* Install expo-cli with this terminal command : npm install -g expo-cli / If there is a problem with windows restriction ->  Set-ExecutionPolicy -Score CurrentUser -ExecutionPolicy RemoteSigned (on powershell)
+* Install expo client on your phone
+* Navigate to the : react-native-esp-app folder on your computer. In app.tsx change line 53’s IP address with the IP address that will be          printed in the Serial Monitor of the Arduino IDE app. 
+* write expo start in the terminal
+* Scan the QR code with your phone, which will open the app
+
+* Download these following softwares on your computer : 
+* the Arduino IDE app : https://www.arduino.cc/en/software
+* Set the Arduino IDE with NodeMCU ESP8266 (there are tutorials if needed on YouTube) 
+* Add the board manager link in Arduino IDE Files < Preferences < Additional Board Manager URLs field : https://arduino.esp8266.com/stable/package_esp8266com_index.json 
+* Install the esp8266 toolchain in the Tools -> Board -> Boards Manager
+* Select Tools->Board->"ESP8266 Boards (some version)"->"NodeMCU V0.9 (ESP-12 Module)".
+* And you may need to install : https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers?tab=downloads
+
+* Clone the Arduino code from the arduino-commands repository 
+* Connect your computer to the ESP8266 board via a micro usb cable
+* Change the ssid and password 
+* Upload the code to the board 
+* Verify in Serial Monitor that it prints Wifi Connected indicating that the board successfully connected to your wifi
+* Disconnect and have fun 
+
+
+
+
 
 ## Motivation 
 Serpentine robots are a groundbreaking innovation in robotics, captivating researchers and engineers with their unique physical characteristics and versatile capabilities. These flexible and slithering machines excel at navigating complex and confined spaces, offering immense potential in various fields, including search and rescue operations, industrial inspections, exploration, medical applications, surveillance and security, and hazardous environments.
@@ -33,13 +63,13 @@ Furthermore, our journey led us to a valuable encounter with a PhD student from 
 * 1 PCA9685 servo motor controller
 * 1 LM2596 DC-to-DC converter
 * 12 DS6225MG Servo motors
-* 48 M3 inserts (SIZE ?)
+* 48 M3 0.5 inserts
 * 48 M3 10mm screws 
 * 1 Adapter cable ModelCraft 58604
 * A lot of cables and electric sheath
 * 28 small lego wheels
 * 2 Lasers 650mn 5V
-* 12 bearings (SIZE ?)
+* 12 bearings 12x8mm
 
 
 ### Piece design
