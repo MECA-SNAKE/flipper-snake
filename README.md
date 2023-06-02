@@ -275,17 +275,42 @@ The development and successful implementation of the concertina motion required 
 --> insert gif of concertina
 
 Lateral undulation, the typical undulating movement of a snake, was the primary locomotion type we aimed to achieve in our project. Implementing this motion required a closer look at the underlying mathematics.
-Surprisingly, the equation for a simple undulation was not overly complex; it could be represented by a sine wave. In fact, let's consider a sine wave over his period 2 $\pi$
+Surprisingly, the equation for a simple undulation was not overly complex; it could be represented by a sine wave. In fact, let's consider it over his period 2$\pi$ with 12 equidistant points that represent the 12 servo motors of our snake.
 
 ![Alt Text](docs/sine.png)
 
-We can see that undulation is quite similar to this function (or more generally with trigonometric functions). Let's now add some phase term to it to see how it changes the graph:
+We can see that undulation is quite similar to this function (or more generally with trigonometric functions). Let's now add some phase term to it to see how it changes the graph
+
+--> image phase pi/4 avec 12 points
+
+This function can be written like this $\sin(x + \frac{\pi}{4})$, where $\frac{\pi}{4}$ is the phase term, meaning that we shift the function to the left with a value of $\frac{\pi}{4}$. The idea to simulate a wave form now is to continuously change the phase term from 0 to 2$\pi$.
+
+<iframe src="https://www.geogebra.org/calculator/bxwqg3t7?embed" width="800" height="600" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+We can see here a wave that seems to propagates. Now, each servo is represented by a point on the period of the graph, and each point represent a value of the sine function at a particular input $x$ ; and with the animation, at a specific time $t$. The time variable can be now interpreted by this phase term that continuously change. If we say that each servo value has to follow on of this points, then it's value will look as the sine wave for a particular point $x$. 
 
 In theory, this may seem logical, but there was a crucial consideration to keep in mind. While our concept of undulation exists in a continuous world, our robotic snake consists of discrete components with **fixed length**, unlike a real snake that can extend its body. This aspect posed a significant challenge and was a source of concern for us. No matter how well-designed our parts were, implementing a continuous sine wave equation on our snake remained uncertain.
-However, through rigorous testing and experimentation, we discovered that our implementation of the sine wave equation for lateral undulation did indeed work. The coordinated movement of the servo motors and the discrete segments produced a convincing simulation of the undulating motion observed in real snakes.
+However, through rigorous testing and experimentation, we discovered that our implementation of the sine wave equation for lateral undulation did indeed work. The coordinated movement of the servo motors and the discrete segments produced a convincing simulation of the undulating motion observed in real snakes. The final function for this motion is the following
 
-Overcoming this challenge was a significant milestone in our project, as it enabled us to replicate the characteristic locomotion of snakes. Although our snake's body consists of fixed-length segments, we were able to utilize the principles of the sine wave to achieve a fluid and lifelike undulation
+``` cpp
+void undulated_motion() {
+  for(int i = 0; i < 360; i++) {
+  
+    float brads = i * 3.1415 / 180.0; 
 
+    for(int j = 0; j < N_SERVOS; j++){  
+      
+      if(dir_snake == FORWARD) {
+          rotate(j, 90 + offset + amplitude * sin(frequency * brads + (wavelength * j * 2 * 3.1415) / (N_SERVOS - 1)));
+       } else {
+          rotate(j, 90 + offset + amplitude * sin(-frequency * brads + (wavelength * j * 2 * 3.1415) / (N_SERVOS - 1))); 
+      } 
+    }
+   delay(10);
+  }
+}
+```
+First we have an outer loop going from 0 to 2$\pi$ that representing the input values of the function (it's domain of definition). 
     
 ## Limitation
 
