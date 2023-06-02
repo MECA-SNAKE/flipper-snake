@@ -352,16 +352,44 @@ With this done, we have a relatively smooth way to change the direction of the s
     
 ## Limitation
 
+Our project has encountered several noteworthy limitations that have influenced our progress and achievements. It is essential to acknowledge and comprehend these limitations, as they have played a crucial role in shaping our decision-making process. Moreover, we have successfully developed solutions within these boundaries posed by these limitations. By recognizing and addressing these limitations, we gain valuable insights for future improvements and refinements, and can maximize our project’s potential.
+
+### Sensors
+Having managed to attain our project’s priority, a functional undulating snake, our desire was to implement additional features, such as sensors. 
+
+At first, we implemented sensors that would be able to detect potholes in its path. By wanting to challenge and implement a more impressive sensor functionality, we hoped, in a second step, that the snake would detect not potholes but objects, walls or other obstacles in its path, and that it would avoid these obstacles, either by changing his course or by stopping. 
+
+The HC-SR04 ultrasonic sensors, utilizes ultrasonic waves to measure distances and detect objects in its surrounding environment. The working principle of the HC-SR04 sensor involves emitting ultrasonic pulses and calculating the time it takes for the echoes to return. It consists of two main components: a transmitter and a receiver. The transmitter emits high-frequency sound waves, which propagate through the air and bounce off any objects in their path. The receiver then detects the echoes and measures the time interval between transmission and reception. By using the speed of sound as a constant, the sensor can calculate the distance to the objects based on the time taken for the echoes to return. 
+
+→ insert image of the function
+
+The successful implementation of the Arduino code and the subsequent testing initially led us to believe that the sensor task was successfully completed. However, upon attempting to test the entire system, including the snake and sensors, we immediately observed that the snake was no longer performing its intended movements as programmed.
+
+After conducting thorough research, we have determined that the Arduino ESP8266 lacks support for multi-threading, which accounts for the unexpected behavior of the snake. Specifically, the issue arises during the time that elapses from  the emission of high-frequency waves by the transmitter to the detection of echoes by the receiver. As a result, the snake becomes unable to execute its movement instructions concurrently.
+
+To address this challenge, a viable solution would have been to utilize two interconnected Arduino ESP8266 devices - one dedicated to handling the snake’s movements and the other focused on sensor operations. This arrangement would have allowed for seamless collaboration between the two components, enabling them to function harmoniously and resolve the issue at hand.
+
+### Concertina movement
+Another goal we had originally envisioned to incorporate was to implement the concertina movement into our robotic snake's locomotion to navigate through narrow passages. This is a method of locomotion used by certain snake species in confined spaces. It involves the snake alternately anchoring parts of its body against the walls or objects and then pulling the rest of its body forward, creating accordion-like folds.
+However, we faced challenges in implementing this complex motion due to the precise servo control and the internal force required. Anchoring the front portion of the body and extending it forward to pull the rest of the body along proved difficult. The inadequate grip of the wheels and the snake's insufficient weight made it challenging to generate the necessary downforce for effective propulsion. Due to insufficient downforce, the snake was pushed backward while extending it's front section, counteracting its forward movement. Similarly, when contracting the rear, the front part of the snake was pulled backward, causing it to remain stationary or make minimal progress.
+
+### Second degree of freedom
+Initially, our plan was to incorporate a secondary degree of movement that would allow the snake to slide over obstacles or steps. 
+However, implementing this proved challenging since it required two servos per body part to enable both side-to-side and up-and-down motion. With our current setup of 12 servos, one for each body part, implementing this additional movement would have significantly increased the size of each piece, resulting in a larger and significantly heavier snake. Furthermore, our existing battery solution would not have been capable of powering an additional 12 servos. 
+With additional time, we would have explored the possibility of introducing a secondary degree of movement to specific sections of the snake. For instance, we could have enabled the tail to mimic the rattling motion seen in rattlesnakes, or elevated the head to enhace sensory capabilities for better environmental scanning.
+
 ## Improvements
 
---> calibration of the servos, second degree of freedom, avoiding wheels with a material, 
+### Calibration of each servo
+We could improve the robot by enhancing the calibration of the servos. Currently, we have observed a slight deviation to the right in the snake's movement. Upon investigation, we determined that the issue stems from the servos' range being from -20 to 160 degrees rather than the desired 0 to 180 degrees. This discrepancy is a result of servo calibration. To rectify this, we need to determine the precise pulse signal values that allow for movement to any angle between 0 and 180 degrees. Additionally, this calibration process must be done individually for each servo, rather than having a general minimum and maximum pulse width. With a more meticulous servo calibration, we can significantly enhance the snake's movement.
 
+### Adding a new degree of freedom
+Another important improvement involves introducing an additional degree of freedom, enabling the snake to lift its body upward. This added capability would facilitate a movement commonly observed in snakes known as "sidewinding," where the snake lifts a portion of its body to reduce friction and slither sideways. Incorporating this feature would greatly expand the range of movements the robot can perform.
 
-If we had more time to continue refining Flipper, there are several aspects we would have liked to reconsider and improve upon. One notable area of focus would be the mechanism used for locomotion. While Flipper currently utilizes wheels for movement, a more realistic and intriguing approach would be to explore the integration of scale-like materials.
-In nature, snakes navigate their environment by utilizing the overlapping scales on their bellies, which generate friction against the ground. This friction provides the snakes with a preferred direction of motion, allowing them to slither and maneuver effectively. By incorporating a scale-like material on Flipper's underside, we could potentially replicate this friction-based locomotion.
-Replacing the wheels with a scale-like material would not only enhance the authenticity and natural movement of our robotic snake but could also offer improved traction and control on various surfaces. The scales could be designed to interlock and move in a coordinated manner, creating a smooth undulating motion reminiscent of a real snake.
-Integrating such a scale-like material would undoubtedly require careful design and engineering considerations, including flexibility, durability, and the ability to mimic the frictional properties of snake scales. This is the reason why we initially had to abandon this idea.
-Given additional time and resources, exploring this scale-like material integration would have been an exciting avenue to pursue, further enhancing the authenticity and realism of Flipper's movements.
+Furthermore, it would be beneficial to incorporate sensors that prevent the snake from colliding with obstacles. Achieving this requires adding another NodeMCU and establishing communication between the two units. More details regarding this aspect will be discussed in the limitations.
+
+### Replacing the wheels
+Lastly, a noteworthy advancement would be to replace the wheels with a material that mimics the scales found on snakes. This modification would provide a more lifelike appearance to the robot, aligning it with the characteristics of actual snakes. However, it is important to note that this particular enhancement falls under the realm of a research-level project.
 
 
 
