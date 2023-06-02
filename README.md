@@ -1,4 +1,4 @@
-# Flipper - Snake Robot
+# Flipper - Snake Robot - Making Intellingent Things Project 2023 - Spring 2023
 Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intricately designed 3D-printed pieces. With its remarkable capabilities, Flipper elegantly navigates and explores its surroundings. This versatile robot boasts 3 distinct modes of motion: Inchworm, Concertina, and Undulation. The Inchworm mode enables precise inch-by-inch movement, the Concertina mode mimics the graceful accordion-like motion. In the Undulation mode, Flipper effortlessly slithers with a mesmerizing sinusoidal movement. Flipper's innovative design and diverse locomotion options make it a remarkable robotic creation. 
 
 -- insert videos --
@@ -133,8 +133,6 @@ Efficient cable management is intricately intertwined with the electronic design
 ![Alt Text](docs/holes.jpg)
 
 One of the primary challenges pertaining to the cables revolved around soldering the positive and negative wires of all the servos to the corresponding terminals of the battery after the converter. While the process itself was repetitive and not excessively complex, it required utmost caution to avoid any missteps. A single missed solder joint would necessitate starting over from the beginning, amplifying the importance of being attentive to detail throughout the soldering process.
-
---> images of the soldering of the +/-
   
 ## Software Design
 
@@ -153,7 +151,6 @@ Finally, with some solid background of computer science studies, we thought that
 ![Alt Text](docs/final_example.gif)
 
 ### Client-Server communication
-
 
 To establish communication between the ESP8266 and the React Native app, we initially planned to utilize Bluetooth Low Energy (BLE) due to its simplicity and ease of deployment. However, we soon realized that the ESP8266 lacked a Bluetooth module and instead possessed a Wi-Fi module. This prompted us to change our approach and leverage the Wi-Fi capabilities of the ESP8266.
 To enable communication between the React Native app and the ESP8266, we deployed a web server on the ESP8266. This web server served as a central hub to handle incoming POST requests from the app, allowing for seamless control of the snake. Within the web server, we implemented multiple routes to handle various POST requests from the client (the app). One example is the route designed for resetting the snake. When the user pressed the "reset" button in the app, a corresponding POST request was sent to the designated endpoint on the ESP8266. This triggered the necessary actions to reset the snake to its initial state. Here is the code that illustrates the "receive" function on the server side.
