@@ -5,6 +5,11 @@ https://meca-snake.github.io/flipper-snake/
 
 Meet Flipper, an impressive snake robot measuring 1m20 and crafted from 13 intricately designed 3D-printed pieces. With its remarkable capabilities, Flipper elegantly navigates and explores its surroundings. This versatile robot boasts 3 distinct modes of motion: Inchworm, Concertina, and Undulation. The Inchworm mode enables precise inch-by-inch movement, the Concertina mode mimics the graceful accordion-like motion. In the Undulation mode, Flipper effortlessly slithers with a mesmerizing sinusoidal movement. Flipper's innovative design and diverse locomotion options make it a remarkable robotic creation. 
 
+## News
+* May 2023: Present project outcome in a public forum
+* June 2023: Invitation from the EPFL Computer Science and Communication Systems Section to present Flipper to the Section's teachers at the Lausanne Palace
+* Octobre 2023: Invitation to the VIScon 2023 symposium at ETH in Zürich
+
 
 ![Alt Text](docs/video_1.gif)
 
